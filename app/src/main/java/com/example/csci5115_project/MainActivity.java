@@ -87,7 +87,8 @@ public class MainActivity extends AppCompatActivity
             Intent startNewActivity = new Intent(this, Restaurant_Page.class);
             startActivity(startNewActivity);
         } else if (id == R.id.nav_slideshow) {
-
+            Intent startNewActivity = new Intent(this, PurchaseHistoryPage.class);
+            startActivity(startNewActivity);
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
