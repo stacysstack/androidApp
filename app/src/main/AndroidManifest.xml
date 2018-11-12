@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Restaurant_Page"></activity>
+        <activity android:name=".PurchaseHistoryPage"></activity>
     </application>
 
 </manifest>
