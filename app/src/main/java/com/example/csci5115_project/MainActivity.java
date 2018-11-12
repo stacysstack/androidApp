@@ -90,7 +90,8 @@ public class MainActivity extends AppCompatActivity
             Intent startNewActivity = new Intent(this, PurchaseHistoryPage.class);
             startActivity(startNewActivity);
         } else if (id == R.id.nav_manage) {
-
+            Intent startNewActivity = new Intent(this, Accounts_Page.class);
+            startActivity(startNewActivity);
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
