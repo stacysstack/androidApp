@@ -82,20 +82,20 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            Intent startNewActivity = new Intent(this, MainActivity.class);
+            startActivity(startNewActivity);
         } else if (id == R.id.nav_gallery) {
             Intent startNewActivity = new Intent(this, Restaurant_Page.class);
             startActivity(startNewActivity);
         } else if (id == R.id.nav_slideshow) {
             Intent startNewActivity = new Intent(this, PurchaseHistoryPage.class);
             startActivity(startNewActivity);
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_share) {
             Intent startNewActivity = new Intent(this, Accounts_Page.class);
             startActivity(startNewActivity);
-        } else if (id == R.id.nav_share) {
-
         } else if (id == R.id.nav_send) {
-
+            Intent startNewActivity = new Intent(this, Login.class);
+            startActivity(startNewActivity);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

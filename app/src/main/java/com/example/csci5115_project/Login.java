@@ -1,6 +1,5 @@
 package com.example.csci5115_project;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,27 +12,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.content.Intent;
 
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import java.util.ArrayList;
-import java.util.List;
-
-public class Restaurant_Page extends AppCompatActivity
+public class Login extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-
-
-    //a list to store all the products
-    List<Product> productList;
-
-    //the recyclerview
-    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_restaurant__page);
+        setContentView(R.layout.activity_login);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -54,45 +41,6 @@ public class Restaurant_Page extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
-        //getting the recyclerview from xml
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        //initializing the productlist
-        productList = new ArrayList<>();
-
-
-        //adding some items to our list
-        productList.add(
-                new Product(
-                        1,
-                        "Pizza Co.",
-                        "We make great pizzas!",
-                        R.drawable.pizza));
-
-        productList.add(
-                new Product(
-                        1,
-                        "Taco Palace",
-                        "Tacos so good, you think you are in Mexico.",
-                        R.drawable.taco));
-
-        productList.add(
-                new Product(
-                        1,
-                        "Big Burgerz",
-                        "Burgers you won't be able to handle",
-                        R.drawable.burger));
-
-        //creating recyclerview adapter
-        ProductAdapter adapter = new ProductAdapter(this, productList);
-
-        //setting adapter to recyclerview
-        recyclerView.setAdapter(adapter);
-
     }
 
     @Override
@@ -108,7 +56,7 @@ public class Restaurant_Page extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.restaurant__page, menu);
+        getMenuInflater().inflate(R.menu.login_page, menu);
         return true;
     }
 
@@ -137,15 +85,11 @@ public class Restaurant_Page extends AppCompatActivity
             Intent startNewActivity = new Intent(this, MainActivity.class);
             startActivity(startNewActivity);
         } else if (id == R.id.nav_gallery) {
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-            if (drawer.isDrawerOpen(GravityCompat.START)) {
-                drawer.closeDrawer(GravityCompat.START);
-            }
-
+            Intent startNewActivity = new Intent(this, Restaurant_Page.class);
+            startActivity(startNewActivity);
         } else if (id == R.id.nav_slideshow) {
             Intent startNewActivity = new Intent(this, PurchaseHistoryPage.class);
             startActivity(startNewActivity);
-
         } else if (id == R.id.nav_share) {
             Intent startNewActivity = new Intent(this, Accounts_Page.class);
             startActivity(startNewActivity);
@@ -159,9 +103,3 @@ public class Restaurant_Page extends AppCompatActivity
         return true;
     }
 }
-
-
-
-
-
-
