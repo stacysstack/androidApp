@@ -22,6 +22,12 @@
         <activity android:name=".Restaurant_Page" />
         <activity android:name=".PurchaseHistoryPage" />
         <activity android:name=".Accounts_Page"/>
+        <activity android:name=".PurchaseHistoryPage" />
+        <activity
+            android:name=".Restaurant_Page"
+            android:label="@string/title_activity_restaurant__page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AccountsMain"/>
     </application>
 
 </manifest>

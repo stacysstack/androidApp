@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
@@ -34,7 +35,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         //inflating and returning our view holder
         LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view = inflater.inflate(R.layout.layout_products, null);
-        return new ProductViewHolder(view);
+        return new ProductViewHolder(view, mCtx);
     }
 
     @Override
@@ -59,18 +60,30 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     }
 
 
-    class ProductViewHolder extends RecyclerView.ViewHolder {
+    class ProductViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView textViewTitle, textViewShortDesc, textViewRating, textViewPrice;
         ImageView imageView;
+        Context ctx;
+        ArrayList<Product> products = new ArrayList<Product>();
 
-        public ProductViewHolder(View itemView) {
+        public ProductViewHolder(View itemView, Context ctx) {
             super(itemView);
-
+            this.products = products;
+            this.ctx = ctx;
+            itemView.setOnClickListener(this);
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
             textViewShortDesc = itemView.findViewById(R.id.textViewShortDesc);
 //            textViewRating = itemView.findViewBsid.textViewPrice);
             imageView = itemView.findViewById(R.id.imageView);
+        }
+
+        @Override
+        public void onClick(View v) {
+//            int position = getAdapterPosition();
+//            Product this_product = this.products.get(position);
+//            Intent intent = new Intent(ctx, )
+
         }
     }
 }
