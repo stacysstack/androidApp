@@ -87,7 +87,7 @@ public class Accounts_Page extends AppCompatActivity
                         "John Doe",
                         "000000",
                         333,
-                        3,
+                        "1/21",
                         52345,
                         R.drawable.amex));
 
@@ -97,7 +97,7 @@ public class Accounts_Page extends AppCompatActivity
                         "John Doe",
                         "00000000",
                         333,
-                        3,
+                        "5/19",
                         52345,
                         R.drawable.discover));
 
@@ -107,7 +107,7 @@ public class Accounts_Page extends AppCompatActivity
                         "John Doe",
                         "0000000",
                         523,
-                        3,
+                        "01/23",
                         62345,
                         R.drawable.usbank));
 
@@ -163,7 +163,6 @@ public class Accounts_Page extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
             Intent startNewActivity = new Intent(this, Restaurant_Page.class);
             startActivity(startNewActivity);
-
         } else if (id == R.id.nav_slideshow) {
             Intent startNewActivity = new Intent(this, PurchaseHistoryPage.class);
             startActivity(startNewActivity);

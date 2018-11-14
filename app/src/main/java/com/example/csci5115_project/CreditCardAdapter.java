@@ -44,6 +44,11 @@ public class CreditCardAdapter extends RecyclerView.Adapter<CreditCardAdapter.Cr
         CreditCard creditcard = cardList.get(position);
 
         //binding the data with the viewholder views
+        holder.textViewCardTitle.setText(creditcard.getTitle());
+        holder.textViewCardNumber.setText(creditcard.getCardnumber());
+        holder.textViewExpiration.setText(creditcard.getExpiration());
+//        holder.textViewExpiration.setText(creditcard.getExpiration());
+
 //        holder.textViewTitle.setText(creditcard.getTitle());
 //        holder.textViewShortDesc.setText(creditcard.getShortdesc());
 //        holder.textViewRating.setText(String.valueOf(product.getRating()));
@@ -62,7 +67,9 @@ public class CreditCardAdapter extends RecyclerView.Adapter<CreditCardAdapter.Cr
 
     class CreditViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        TextView textViewTitle, textViewShortDesc, textViewRating, textViewPrice;
+        TextView textViewCardTitle;
+        TextView textViewCardNumber;
+        TextView textViewExpiration;
         ImageView imageView;
         Context ctx;
         ArrayList<CreditCard> creditcard = new ArrayList<CreditCard>();
@@ -72,8 +79,10 @@ public class CreditCardAdapter extends RecyclerView.Adapter<CreditCardAdapter.Cr
             this.creditcard = creditcard;
             this.ctx = ctx;
             itemView.setOnClickListener(this);
-            textViewTitle = itemView.findViewById(R.id.textViewTitle);
-            textViewShortDesc = itemView.findViewById(R.id.textViewShortDesc);
+            textViewCardTitle = itemView.findViewById(R.id.textViewCardTitle);
+            textViewCardNumber = itemView.findViewById(R.id.textViewCC);
+            textViewExpiration = itemView.findViewById(R.id.textViewExp);
+//            textViewShortDesc = itemView.findViewById(R.id.textViewShortDesc);
 //            textViewRating = itemView.findViewBsid.textViewPrice);
             imageView = itemView.findViewById(R.id.imageView);
         }

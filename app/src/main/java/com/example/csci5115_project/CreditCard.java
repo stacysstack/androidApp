@@ -5,11 +5,11 @@ public class CreditCard {
     private String owner;
     private String cardnumber;
     private int cvv;
-    private int expiration;
+    private String expiration;
     private int zip;
     private int image;
 
-    public CreditCard(String title, String owner, String cardnumber,int cvv, int expiration, int zip, int image){
+    public CreditCard(String title, String owner, String cardnumber,int cvv, String expiration, int zip, int image){
         this.title = title;
         this.owner = owner;
         this.cardnumber = cardnumber;
@@ -26,7 +26,7 @@ public class CreditCard {
 
     public int getCvv(){ return cvv; }
 
-    public int getExpiration(){ return expiration; }
+    public String getExpiration(){ return expiration; }
 
     public int getZip(){ return zip; }
 

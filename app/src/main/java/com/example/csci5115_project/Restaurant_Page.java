@@ -141,7 +141,6 @@ public class Restaurant_Page extends AppCompatActivity
             if (drawer.isDrawerOpen(GravityCompat.START)) {
                 drawer.closeDrawer(GravityCompat.START);
             }
-
         } else if (id == R.id.nav_slideshow) {
             Intent startNewActivity = new Intent(this, PurchaseHistoryPage.class);
             startActivity(startNewActivity);

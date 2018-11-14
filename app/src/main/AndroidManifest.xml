@@ -23,7 +23,7 @@
         <activity android:name=".PurchaseHistoryPage"
             android:label = "Purchase History"/>
         <activity android:name=".Accounts_Page"
-            android:label="Payment Types"/>
+            android:label="Payment Accounts"/>
         <activity android:name=".Login" />
         <activity
             android:name=".Restaurant_Page"

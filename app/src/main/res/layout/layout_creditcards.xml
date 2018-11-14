@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="5dp">
 
         <RelativeLayout
@@ -21,27 +22,44 @@
                 android:padding="4dp" />
 
             <TextView
-                android:id="@+id/textViewTitle"
+                android:id="@+id/textViewCardTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="7dp"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_toRightOf="@id/imageView"
                 android:text="AMEX"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
-                android:id="@+id/textViewShortDesc"
-                android:layout_width="wrap_content"
+                android:id="@+id/textViewCC"
+                android:layout_width="152dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textViewTitle"
-                android:layout_marginLeft="5dp"
+                android:layout_below="@id/textViewCardTitle"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="6dp"
                 android:layout_toRightOf="@id/imageView"
-                android:text="41832186876418937693"
+                android:text="41832186"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+            <TextView
+                android:id="@+id/textViewExp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewCardTitle"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_toRightOf="@id/textViewCC"
+                android:text="1/21"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
 
             <!--<TextView-->
             <!--android:id="@+id/textViewRating"-->
