@@ -94,8 +94,10 @@ public class Login extends AppCompatActivity
             Intent startNewActivity = new Intent(this, Accounts_Page.class);
             startActivity(startNewActivity);
         } else if (id == R.id.nav_send) {
-            Intent startNewActivity = new Intent(this, Login.class);
-            startActivity(startNewActivity);
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            if (drawer.isDrawerOpen(GravityCompat.START)) {
+                drawer.closeDrawer(GravityCompat.START);
+            }
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -168,8 +168,10 @@ public class Accounts_Page extends AppCompatActivity
             startActivity(startNewActivity);
 
         } else if (id == R.id.nav_share) {
-            Intent startNewActivity = new Intent(this, Accounts_Page.class);
-            startActivity(startNewActivity);
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            if (drawer.isDrawerOpen(GravityCompat.START)) {
+                drawer.closeDrawer(GravityCompat.START);
+            }
 
         } else if (id == R.id.nav_send) {
             Intent startNewActivity = new Intent(this, Login.class);

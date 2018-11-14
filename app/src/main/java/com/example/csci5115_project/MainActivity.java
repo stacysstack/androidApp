@@ -82,8 +82,10 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            Intent startNewActivity = new Intent(this, MainActivity.class);
-            startActivity(startNewActivity);
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            if (drawer.isDrawerOpen(GravityCompat.START)) {
+                drawer.closeDrawer(GravityCompat.START);
+            }
         } else if (id == R.id.nav_gallery) {
             Intent startNewActivity = new Intent(this, Restaurant_Page.class);
             startActivity(startNewActivity);
