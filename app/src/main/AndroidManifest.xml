@@ -5,13 +5,13 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="One-Click Ordering"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
+            android:label="One-Click Ordering"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,14 +20,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PurchaseHistoryPage" />
-        <activity android:name=".Accounts_Page" />
+        <activity android:name=".PurchaseHistoryPage"
+            android:label = "Purchase History"/>
+        <activity android:name=".Accounts_Page"
+            android:label="Payment Types"/>
         <activity android:name=".Login" />
         <activity
             android:name=".Restaurant_Page"
-            android:label="@string/title_activity_restaurant__page"
+            android:label="Restaurants"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AddNewCreditCard"></activity>
+        <activity android:name=".AddNewCreditCard"/>
     </application>
 
 </manifest>
