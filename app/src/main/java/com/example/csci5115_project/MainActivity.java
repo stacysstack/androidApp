@@ -3,6 +3,7 @@ package com.example.csci5115_project;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -30,6 +31,42 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+            }
+        });
+
+        FloatingActionButton pizza1 = (FloatingActionButton) findViewById(R.id.pizzaButton);
+        pizza1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startNewActivity = new Intent(MainActivity.this, Restaurant_Page.class);
+                startActivity(startNewActivity);
+            }
+        });
+
+        FloatingActionButton burger = (FloatingActionButton) findViewById(R.id.burgerButton);
+        burger.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startNewActivity = new Intent(MainActivity.this, Restaurant_Page.class);
+                startActivity(startNewActivity);
+            }
+        });
+
+        FloatingActionButton taco = (FloatingActionButton) findViewById(R.id.tacoButton);
+        taco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startNewActivity = new Intent(MainActivity.this, Restaurant_Page.class);
+                startActivity(startNewActivity);
+            }
+        });
+
+        FloatingActionButton pizza2 = (FloatingActionButton) findViewById(R.id.meatPizzaButton);
+        pizza2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startNewActivity = new Intent(MainActivity.this, Restaurant_Page.class);
+                startActivity(startNewActivity);
             }
         });
 
@@ -104,4 +141,25 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    /* Doesn't work */
+//    public boolean onFavoriteSelected(CardView item) {
+//        int id = item.getId();
+    /* Navigation to incorrect location - for testing purposes */
+//        if (id == R.id.pizzaCardViewId) {
+//            Intent startNewActivity = new Intent(this, Restaurant_Page.class);
+//            startActivity(startNewActivity);
+//        } else if (id == R.id.burgersCardViewId) {
+//            Intent startNewActivity = new Intent(this, Restaurant_Page.class);
+//            startActivity(startNewActivity);
+//        } else if (id == R.id.tacoCardViewId) {
+//            Intent startNewActivity = new Intent(this, Restaurant_Page.class);
+//            startActivity(startNewActivity);
+//        } else if (id == R.id.meatPizzaCardViewId) {
+//            Intent startNewActivity = new Intent(this, Restaurant_Page.class);
+//            startActivity(startNewActivity);
+//       }
+//        return true;
+//    }
+
 }
