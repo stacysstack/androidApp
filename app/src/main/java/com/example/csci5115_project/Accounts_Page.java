@@ -16,6 +16,8 @@ import android.view.MenuItem;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Button;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,12 +25,13 @@ public class Accounts_Page extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
-
     //a list to store all the products
     List<Product> productList;
 
     //the recyclerview
     RecyclerView recyclerView;
+
+    Button gotonewcc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,18 @@ public class Accounts_Page extends AppCompatActivity
 //                        .setAction("Action", null).show();
 //            }
 //        });
+
+        //add new credit card button
+        gotonewcc = (Button)findViewById(R.id.addnewcc);
+        gotonewcc.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent makecc = new Intent(getApplicationContext(), AddNewCreditCard.class);
+                startActivity(makecc);
+            }
+        });
+        //end button
+
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

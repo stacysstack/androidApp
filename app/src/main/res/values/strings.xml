@@ -10,6 +10,8 @@
     <string name="favorites">Favorites coming soon</string>
     <string name="login">Login coming soon</string>
     <string name="addnew">Add New</string>
-
+    <string name="creditcardhint">Hint</string>
+    <string name="cancel">Cancel</string>
+    <string name="savecc">Save</string>
 
 </resources>
