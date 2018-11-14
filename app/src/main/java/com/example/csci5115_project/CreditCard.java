@@ -3,13 +3,13 @@ package com.example.csci5115_project;
 public class CreditCard {
     private String title;
     private String owner;
-    private int cardnumber;
+    private String cardnumber;
     private int cvv;
     private int expiration;
     private int zip;
     private int image;
 
-    public CreditCard(String title, String owner, int cardnumber,int cvv, int expiration, int zip, int image){
+    public CreditCard(String title, String owner, String cardnumber,int cvv, int expiration, int zip, int image){
         this.title = title;
         this.owner = owner;
         this.cardnumber = cardnumber;
@@ -22,7 +22,7 @@ public class CreditCard {
 
     public String getOwner(){ return owner; }
 
-    public int getCardnumber() { return cardnumber; }
+    public String getCardnumber() { return cardnumber; }
 
     public int getCvv(){ return cvv; }
 

@@ -26,7 +26,7 @@ public class Accounts_Page extends AppCompatActivity
 
 
     //a list to store all the products
-    List<Product> productList;
+    List<CreditCard> cardList;
 
     //the recyclerview
     RecyclerView recyclerView;
@@ -50,16 +50,15 @@ public class Accounts_Page extends AppCompatActivity
 //        });
 
         //add new credit card button
-        gotonewcc = (Button)findViewById(R.id.addnewcc);
-        gotonewcc.setOnClickListener(new View.OnClickListener(){
+        gotonewcc = (Button) findViewById(R.id.addnewcc);
+        gotonewcc.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 Intent makecc = new Intent(getApplicationContext(), AddNewCreditCard.class);
                 startActivity(makecc);
             }
         });
         //end button
-
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -78,33 +77,42 @@ public class Accounts_Page extends AppCompatActivity
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         //initializing the productlist
-        productList = new ArrayList<>();
+        cardList = new ArrayList<>();
 
 
         //adding some items to our list
-        productList.add(
-                new Product(
-                        1,
-                        "AMEX.",
-                        "141283312234235324",
+        cardList.add(
+                new CreditCard(
+                        "My American Express",
+                        "John Doe",
+                        "000000",
+                        333,
+                        3,
+                        52345,
                         R.drawable.amex));
 
-        productList.add(
-                new Product(
-                        1,
-                        "Discover",
-                        "42342353243425234",
+        cardList.add(
+                new CreditCard(
+                        "REI Discover",
+                        "John Doe",
+                        "00000000",
+                        333,
+                        3,
+                        52345,
                         R.drawable.discover));
 
-        productList.add(
-                new Product(
-                        1,
-                        "US Bank",
-                        "52394783865823740273",
+        cardList.add(
+                new CreditCard(
+                        "Bank Card",
+                        "John Doe",
+                        "0000000",
+                        523,
+                        3,
+                        62345,
                         R.drawable.usbank));
 
         //creating recyclerview adapter
-        ProductAdapter adapter = new ProductAdapter(this, productList);
+        CreditCardAdapter adapter = new CreditCardAdapter(this, cardList);
 
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
