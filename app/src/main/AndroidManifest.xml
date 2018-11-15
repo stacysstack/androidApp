@@ -20,16 +20,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PurchaseHistoryPage"
-            android:label = "Purchase History"/>
-        <activity android:name=".Accounts_Page"
-            android:label="Payment Accounts"/>
+        <activity
+            android:name=".PurchaseHistoryPage"
+            android:label="Purchase History" />
+        <activity
+            android:name=".Accounts_Page"
+            android:label="Payment Accounts" />
         <activity android:name=".Login" />
         <activity
             android:name=".Restaurant_Page"
             android:label="Restaurants"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AddNewCreditCard"/>
+        <activity android:name=".AddNewCreditCard" />
         <activity android:name=".Menu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,13 +39,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OrderActivity"
+        <activity
+            android:name=".OrderActivity"
             android:label="create_order"
             android:parentActivityName=".Menu">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Menu" />
         </activity>
+        <activity android:name=".PopUpActivity"></activity>
     </application>
 
 </manifest>

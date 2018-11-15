@@ -8,8 +8,6 @@
     tools:context=".Accounts_Page"
     tools:showIn="@layout/app_bar_accounts_page">
 
-
-
     <Button
         android:id="@+id/addnewcc"
         style="@style/Widget.AppCompat.Button"
@@ -24,6 +22,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 
 </android.support.constraint.ConstraintLayout>
