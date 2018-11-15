@@ -14,4 +14,45 @@
     <string name="cancel">Cancel</string>
     <string name="savecc">Save</string>
 
+
+    <string name="create_order">Create Order</string>
+    <string name="create_order_title">Create Order</string>
+    <string name="action_share">Share</string>
+
+    <string name="title_top">Top fragment</string>
+    <string-array name="tacos">
+        <item>Pork, Cilantro, Onion, Pineapple, Salsa</item>
+        <item>Steak, Chorizo, Roasted Tomatilo Salsa</item>
+        <item>Chicken, Potato, Queso, Carmelized Onion</item>
+        <item>Tilapia, Avocado, Serrano Salsa</item>
+    </string-array>
+
+    <string-array name="sides">
+        <item>Tortilla Chips and Dips</item>
+        <item>Chips and Queso</item>
+        <item>Steak Quesadilla</item>
+        <item>Fried Avocados</item>
+        <item>Steak Salad</item>
+    </string-array>
+
+    <string-array name="stores">
+        <item>Uptown, MN</item>
+        <item>North Loop, MN</item>
+        <item>Saint Paul, MN</item>
+    </string-array>
+
+    <string name="home_tab">Home</string>
+    <string name="taco_tab">Tacos</string>
+    <string name="sides_tab">Sides</string>
+    <string name="store_tab">Stores</string>
+
+    <string name="company_name">Twin City Taco</string>
+    <string name="restaurant_image">Restaurant image</string>
+    <string name="home_text">Since we opened in 2018, Twin City Taco has
+        been voted the top taco shop in the Twin Cities. Come in and see
+        what we are all about!</string>
+
+    <string name="order_name_hint">Please enter your name</string>
+    <string name="order_details_hint">Please enter your order</string>
+
 </resources>

@@ -43,6 +43,7 @@ public class Restaurant_Page extends AppCompatActivity
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
             }
         });
 
@@ -94,6 +95,7 @@ public class Restaurant_Page extends AppCompatActivity
         recyclerView.setAdapter(adapter);
 
     }
+
 
     @Override
     public void onBackPressed() {

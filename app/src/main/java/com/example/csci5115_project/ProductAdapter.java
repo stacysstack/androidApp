@@ -1,9 +1,8 @@
 package com.example.csci5115_project;
 
-/**
- * Created by karanjaswani on 1/12/18.
- */
+
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,17 +23,27 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     //we are storing all the products in a list
     private List<Product> productList;
 
+//    private final OnClickListener mOnClickListener = new MyOnClickListener();
+
     //getting the context and product list with constructor
     public ProductAdapter(Context mCtx, List<Product> productList) {
         this.mCtx = mCtx;
         this.productList = productList;
     }
 
+
     @Override
     public ProductViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //inflating and returning our view holder
         LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view = inflater.inflate(R.layout.layout_products, null);
+//        view.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(this, MainActivity.class);
+//
+//            }
+//        });
         return new ProductViewHolder(view, mCtx);
     }
 
@@ -65,25 +74,32 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         TextView textViewTitle, textViewShortDesc, textViewRating, textViewPrice;
         ImageView imageView;
         Context ctx;
-        ArrayList<Product> products = new ArrayList<Product>();
 
         public ProductViewHolder(View itemView, Context ctx) {
             super(itemView);
-            this.products = products;
             this.ctx = ctx;
             itemView.setOnClickListener(this);
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
             textViewShortDesc = itemView.findViewById(R.id.textViewShortDesc);
 //            textViewRating = itemView.findViewBsid.textViewPrice);
             imageView = itemView.findViewById(R.id.imageView);
+
+            itemView.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v) {
+                    Intent startNewActivity = new Intent(mCtx, Menu.class);
+                    mCtx.startActivity(startNewActivity);
+
+                }
+
+            });
         }
 
         @Override
         public void onClick(View v) {
-//            int position = getAdapterPosition();
-//            Product this_product = this.products.get(position);
-//            Intent intent = new Intent(ctx, )
-
+            Intent startNewActivity = new Intent(v.getContext(), MainActivity.class);
+            v.getContext().startActivity(startNewActivity);
         }
     }
 }

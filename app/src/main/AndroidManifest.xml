@@ -30,6 +30,20 @@
             android:label="Restaurants"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AddNewCreditCard"/>
+        <activity android:name=".Menu">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".OrderActivity"
+            android:label="create_order"
+            android:parentActivityName=".Menu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Menu" />
+        </activity>
     </application>
 
 </manifest>
