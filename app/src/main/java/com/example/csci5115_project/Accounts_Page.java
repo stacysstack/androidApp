@@ -124,12 +124,6 @@ public class Accounts_Page extends AppCompatActivity
 
     }
 
-    //begin popup window
-
-
-
-
-    //end popup window
 
     @Override
     public void onBackPressed() {

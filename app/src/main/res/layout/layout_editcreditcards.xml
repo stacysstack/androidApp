@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="325dp"
+    android:layout_height="500dp"
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
@@ -11,14 +11,17 @@
         android:layout_margin="5dp">
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="298dp"
+            android:layout_height="430dp"
             android:padding="8dp">
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="120dp"
                 android:layout_height="90dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="76dp"
                 android:padding="4dp" />
 
             <TextView
@@ -26,8 +29,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginLeft="-75dp"
+                android:layout_marginTop="151dp"
                 android:layout_toRightOf="@id/imageView"
                 android:text="AMEX"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
@@ -39,8 +42,8 @@
                 android:layout_width="152dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textViewCardTitle"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="6dp"
+                android:layout_marginLeft="-118dp"
+                android:layout_marginTop="57dp"
                 android:layout_toRightOf="@id/imageView"
                 android:text="41832186"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
@@ -59,7 +62,6 @@
                 android:layout_toRightOf="@id/textViewCC"
                 android:text="1/21"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
-
 
         </RelativeLayout>
 

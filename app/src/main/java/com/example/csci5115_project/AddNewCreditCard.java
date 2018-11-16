@@ -29,9 +29,6 @@ public class AddNewCreditCard extends AppCompatActivity {
 
 
 
-
-
-
         //cancel new card button
         cancelcc = (Button)findViewById(R.id.cancelcc);
         cancelcc.setOnClickListener(new View.OnClickListener(){

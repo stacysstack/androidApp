@@ -9,6 +9,7 @@ public class CreditCard {
     private int zip;
     private int image;
 
+
     public CreditCard(String title, String owner, String cardnumber,int cvv, String expiration, int zip, int image){
         this.title = title;
         this.owner = owner;

@@ -47,7 +47,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Menu" />
         </activity>
-        <activity android:name=".PopUpActivity"></activity>
+        <!--<activity android:name=".PopUpActivity"></activity>-->
+        <activity android:name=".AddNewCreditCard"/>
     </application>
 
 </manifest>
