@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Restaurant_Page">
+    tools:context=".PurchaseHistoryPage">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -20,6 +20,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_restaurant__page" />
-    
+    <include layout="@layout/content_purchase_history_page" />
+
 </android.support.design.widget.CoordinatorLayout>

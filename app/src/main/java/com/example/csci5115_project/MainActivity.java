@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,8 +17,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    List<Favorite> favoriteList;
+    RecyclerView recyclerView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,42 +43,6 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        FloatingActionButton pizza1 = (FloatingActionButton) findViewById(R.id.pizzaButton);
-        pizza1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent startNewActivity = new Intent(MainActivity.this, Restaurant_Page.class);
-                startActivity(startNewActivity);
-            }
-        });
-
-        FloatingActionButton burger = (FloatingActionButton) findViewById(R.id.burgerButton);
-        burger.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent startNewActivity = new Intent(MainActivity.this, Restaurant_Page.class);
-                startActivity(startNewActivity);
-            }
-        });
-
-        FloatingActionButton taco = (FloatingActionButton) findViewById(R.id.tacoButton);
-        taco.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent startNewActivity = new Intent(MainActivity.this, Restaurant_Page.class);
-                startActivity(startNewActivity);
-            }
-        });
-
-        FloatingActionButton pizza2 = (FloatingActionButton) findViewById(R.id.meatPizzaButton);
-        pizza2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent startNewActivity = new Intent(MainActivity.this, Restaurant_Page.class);
-                startActivity(startNewActivity);
-            }
-        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -78,7 +51,42 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerViewFavorites);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        favoriteList = new ArrayList<>();
+
+        favoriteList.add(
+                new Favorite(
+                        1,
+                        "Cheese Pizza",
+                        "Pizza Co.",
+                        R.drawable.pizza));
+        favoriteList.add(
+                new Favorite(
+                        1,
+                        "Beef Taco",
+                        "Twin Cities Taco",
+                        R.drawable.taco));
+        favoriteList.add(
+                new Favorite(
+                        1,
+                        "Cheeseburger No Mustard",
+                        "Dinkytown Burgerz",
+                        R.drawable.taco));
+        favoriteList.add(
+                new Favorite(
+                        1,
+                        "Meatlovers' Pizza",
+                        "Pizza Co.",
+                        R.drawable.pizza));
+
+        FavoriteAdapter adapter = new FavoriteAdapter(this, favoriteList);
+        recyclerView.setAdapter(adapter);
     }
+
 
     @Override
     public void onBackPressed() {

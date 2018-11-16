@@ -2,238 +2,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:padding="4dp"
+    android:orientation="vertical"
+    android:animateLayoutChanges="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:padding="10dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:weightSum="3"
+    <ImageView
+        android:id="@+id/imageViewFavorite"
+        android:layout_margin="5dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
-
-        <TextView
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:textSize="30dp"
-            android:layout_marginTop="10dp"
-            android:text="Favorites"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:padding="10dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:weightSum="3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".MainActivity">
-            <LinearLayout
-                android:clipToPadding="false"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="0dp">
-
-                <android.support.v7.widget.CardView
-                    android:layout_margin="10dp"
-                    android:id="@+id/pizzaCardViewId"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent">
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                                android:src="@drawable/pizza"
-                                android:layout_width="64dp"
-                                android:layout_height="64dp"
-                                android:padding="10dp"
-                                android:background="@color/colorPrimary"
-                                />
-
-                            <View
-                                android:layout_margin="5dp"
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="@color/colorPrimary"
-                                android:padding="10dp"/>
-                            <TextView
-                                android:textStyle="bold"
-                                android:textAlignment="center"
-                                android:layout_marginTop="5dp"
-                                android:text="Cheese Pizza"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" />
-                        <android.support.design.widget.FloatingActionButton
-                            android:id="@+id/pizzaButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"></android.support.design.widget.FloatingActionButton>
-
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-
-                <android.support.v7.widget.CardView
-                    android:layout_margin="10dp"
-                    android:id="@+id/burgersCardViewId"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent">
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:src="@drawable/burger"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:padding="10dp"
-                            android:background="@color/colorPrimary"
-                            />
-
-                        <View
-                            android:layout_margin="5dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="@color/colorPrimary"
-                            android:padding="10dp"/>
-                        <TextView
-                            android:textStyle="bold"
-                            android:textAlignment="center"
-                            android:layout_marginTop="5dp"
-                            android:text="Cheeseburger (No Mustard)"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <android.support.design.widget.FloatingActionButton
-                            android:id="@+id/burgerButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"></android.support.design.widget.FloatingActionButton>
-
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:clipToPadding="false"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="0dp">
-
-                <android.support.v7.widget.CardView
-                    android:layout_margin="10dp"
-                    android:id="@+id/tacoCardViewId"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent">
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:src="@drawable/taco"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:padding="10dp"
-                            android:background="@color/colorAccent"
-                            />
-
-                        <View
-                            android:layout_margin="5dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="@color/colorAccent"
-                            android:padding="10dp"/>
-                        <TextView
-                            android:textStyle="bold"
-                            android:textAlignment="center"
-                            android:layout_marginTop="5dp"
-                            android:text="Beef Taco Extra Cheese"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <android.support.design.widget.FloatingActionButton
-                            android:id="@+id/tacoButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"></android.support.design.widget.FloatingActionButton>
-
-
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:layout_margin="10dp"
-                    android:id="@+id/meatPizzaCardViewId"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent">
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:src="@drawable/pizza"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:padding="10dp"
-                            android:background="@color/colorPrimary"
-                            />
-
-                        <View
-                            android:layout_margin="5dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="@color/colorPrimary"
-                            android:padding="10dp"/>
-                        <TextView
-                            android:textStyle="bold"
-                            android:textAlignment="center"
-                            android:layout_marginTop="5dp"
-                            android:text="Meatlovers' Pizza"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <android.support.design.widget.FloatingActionButton
-                            android:id="@+id/meatPizzaButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"></android.support.design.widget.FloatingActionButton>
-
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
+        android:layout_height="1dp"
+        android:padding="5dp"/>
+    <TextView
+        android:id="@+id/textViewName"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginTop="5dp"
+        android:text="Name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textViewRestaurantName"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginTop="5dp"
+        android:text="Restaurant"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
