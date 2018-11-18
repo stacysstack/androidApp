@@ -13,6 +13,9 @@
     <string name="creditcardhint">Hint</string>
     <string name="cancel">Cancel</string>
     <string name="savecc">Save</string>
+    <string name="email">email</string>
+    <string name="enterpassword">password</string>
+
 
 
     <string name="create_order">Create Order</string>
