@@ -43,6 +43,9 @@ import static android.Manifest.permission.READ_CONTACTS;
 public class Login extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    Button loginbutton;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +61,17 @@ public class Login extends AppCompatActivity
 //                        .setAction("Action", null).show();
 //            }
 //        });
+
+        //add new credit card button
+        loginbutton = (Button) findViewById(R.id.loginbutton);
+        loginbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent makecc = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(makecc);
+            }
+        });
+        //end button
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
