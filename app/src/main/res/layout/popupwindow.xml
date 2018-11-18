@@ -29,112 +29,42 @@
         <!--android:text="Content" />-->
 
     <Button
-        android:id="@+id/okorder"
+        android:id="@+id/savebutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/popupMsg"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="288dp"
-        android:layout_marginEnd="40dp"
-        android:layout_toStartOf="@+id/close"
-        android:text="OK" />
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="119dp"
+        android:layout_toStartOf="@+id/cancelbutton"
+        android:text="Save" />
 
     <Button
-        android:id="@+id/close"
+        android:id="@+id/cancelbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/popupMsg"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="304dp"
-        android:layout_marginEnd="75dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="120dp"
         android:text="Cancel" />
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="8dp">
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="120dp"
-                android:layout_height="90dp"
-                android:padding="4dp" />
-
-            <TextView
-                android:id="@+id/textViewCardTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_toRightOf="@id/imageView"
-                android:text="AMEX"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                android:textColor="#000000" />
-                <!--app:layout_constraintEnd_toEndOf="parent" />-->
-
-
-            <TextView
-                android:id="@+id/textViewCC"
-                android:layout_width="152dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/textViewCardTitle"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="6dp"
-                android:layout_toRightOf="@id/imageView"
-                android:text="41832186"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
-
-            <TextView
-                android:id="@+id/textViewExp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/textViewCardTitle"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginLeft="14dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="18dp"
-                android:layout_marginRight="18dp"
-                android:layout_toRightOf="@id/textViewCC"
-                android:text="1/21"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
-
-
-            <!--<TextView-->
-            <!--android:id="@+id/textViewRating"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_below="@id/textViewShortDesc"-->
-            <!--android:layout_marginLeft="5dp"-->
-            <!--android:layout_marginTop="5dp"-->
-            <!--android:layout_toRightOf="@id/imageView"-->
-            <!--android:background="@color/colorPrimary"-->
-            <!--android:paddingLeft="15dp"-->
-            <!--android:paddingRight="15dp"-->
-            <!--android:text="4.7"-->
-            <!--android:textAppearance="@style/Base.TextAppearance.AppCompat.Small.Inverse"-->
-            <!--android:textStyle="bold" />-->
-
-            <!--<TextView-->
-            <!--android:id="@+id/textViewPrice"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_below="@id/textViewRating"-->
-            <!--android:layout_marginLeft="5dp"-->
-            <!--android:layout_marginTop="5dp"-->
-            <!--android:layout_toRightOf="@id/imageView"-->
-            <!--android:text="INR 56990"-->
-            <!--android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"-->
-            <!--android:textStyle="bold" />-->
-
-        </RelativeLayout>
-
-    </android.support.v7.widget.CardView>
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="183dp"
+        android:layout_height="110dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="82dp"
+        android:layout_marginTop="126dp"
+        android:text="Credit Card"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="24sp" />
 
     <!--<TextView-->
         <!--android:id="@+id/popuptitle"-->

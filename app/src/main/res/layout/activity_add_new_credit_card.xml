@@ -38,7 +38,7 @@
         android:layout_toRightOf="@+id/edit_cvv"
         android:hint="Expiration Date"
         android:inputType="phone"
-        app:met_mask="(##/##" />
+        app:met_mask="##/##" />
 
     <com.santalu.widget.MaskEditText
         android:id="@+id/edit_card_number"
@@ -54,7 +54,7 @@
         android:layout_marginRight="30dp"
         android:hint="Card Number"
         android:inputType="phone"
-        app:met_mask="(#### #### #### ####" />
+        app:met_mask="#### #### #### ####" />
 
     <com.santalu.widget.MaskEditText
         android:id="@+id/edit_cvv"
@@ -66,7 +66,7 @@
         android:layout_marginTop="20dp"
         android:hint="CVV"
         android:inputType="phone"
-        app:met_mask="(####" />
+        app:met_mask="####" />
 
 
     <com.santalu.widget.MaskEditText
@@ -85,7 +85,7 @@
         android:layout_marginRight="199dp"
         android:hint="Zip Code"
         android:inputType="phone"
-        app:met_mask="(#####" />
+        app:met_mask="#####" />
 
     <com.santalu.widget.MaskEditText
         android:id="@+id/edit_name"
@@ -103,7 +103,7 @@
         android:layout_marginRight="29dp"
         android:hint="Name on Credit Card"
         android:inputType="text"
-        app:met_mask="(###################" />
+        app:met_mask="###################" />
 
 
     <Button

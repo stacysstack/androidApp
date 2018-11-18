@@ -13,6 +13,7 @@ import android.graphics.Color;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.RecyclerView;
+import android.text.Layout;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -34,6 +36,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CreditCardAdapter extends RecyclerView.Adapter<CreditCardAdapter.CreditViewHolder> {
+
+
+    //for popup button
+//    Context mContext;
+    CustomItemClickListener listener;
+    //end popup
 
     private MaskEditText editText;
     //this context we will use to inflate the layout
@@ -50,24 +58,35 @@ public class CreditCardAdapter extends RecyclerView.Adapter<CreditCardAdapter.Cr
 //    Button sendbutton;
 //    Dialog popup;
 
-    //getting the context and product list with constructor
-    public CreditCardAdapter(Context mCtx, List<CreditCard> cardList) {
-        this.mCtx = mCtx;
-        this.cardList = cardList;
-    }
+
 
     @Override
     public CreditViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //inflating and returning our view holder
         LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view = inflater.inflate(R.layout.layout_creditcards, null);
-        return new CreditViewHolder(view, mCtx);
+//        return new CreditViewHolder(view, mCtx);
+        //for popup button
+        final CreditViewHolder mViewHolder = new CreditViewHolder(view, mCtx);
+
+        view.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                listener.onItemClick(v, mViewHolder.getAdapterPosition());
+            }
+        });
+        return mViewHolder;
+
+        //end popup
     }
 
     @Override
     public void onBindViewHolder(CreditViewHolder holder, int position) {
         //getting the product of the specified position
         CreditCard creditcard = cardList.get(position);
+        ///for popup
+        holder.textViewCardTitle.setText(cardList.get(position).getTitle());
+        ///end popup
         //binding the data with the viewholder views
         holder.textViewCardTitle.setText(creditcard.getTitle());
         holder.textViewCardNumber.setText(creditcard.getCardnumber());
@@ -81,8 +100,27 @@ public class CreditCardAdapter extends RecyclerView.Adapter<CreditCardAdapter.Cr
     }
 
 
-    class CreditViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
+    //getting the context and product list with constructor
+    public CreditCardAdapter(Context mCtx, List<CreditCard> cardList,
+                             //for popup
+                             CustomItemClickListener listener
+                             ///end for popup
+    ) {
+        this.mCtx = mCtx;
+        this.cardList = cardList;
+
+        //for popup
+        this.listener = listener;
+        //end popup
+    }
+
+    class CreditViewHolder extends RecyclerView.ViewHolder
+//            implements View.OnClickListener {
+    // for popup
+    {
+        //end popup
+//        public TextView itemTitle;
         TextView textViewCardTitle;
         TextView textViewCardNumber;
         TextView textViewExpiration;
@@ -96,79 +134,34 @@ public class CreditCardAdapter extends RecyclerView.Adapter<CreditCardAdapter.Cr
             super(itemView);
 //            this.creditcard = creditcard;
             this.ctx = ctx;
-            itemView.setOnClickListener(this);
+//            itemView.setOnClickListener(itemView);
             textViewCardTitle = itemView.findViewById(R.id.textViewCardTitle);
             textViewCardNumber = itemView.findViewById(R.id.textViewCC);
             textViewExpiration = itemView.findViewById(R.id.textViewExp);
             imageView = itemView.findViewById(R.id.imageView);
 
             // create a popup window with credit card edits
+//            itemView.setOnClickListener(new View.OnClickListener()  {
+//                @Override
+//                public void onClick(View v) {
+//                    openDialog();
+//                }
+//            });
 
-            itemView.setOnClickListener(new View.OnClickListener()  {
-                @Override
-                public void onClick(View v) {
-                    openDialog();
-                }
-            });
         }
 
 
+//        public void openDialog(){
+//            LayoutInflater inflater = LayoutInflater.from(mCtx);
+//            View alertLayout = inflater.inflate(R.layout.popupwindow, null);
+//            AlertDialog alertDialog = new AlertDialog.Builder(mCtx).create();
+//            alertDialog.setView(alertLayout);
+//
+//            new Dialog(mCtx);
+//            alertDialog.show();
+//        }
 
-        public void openDialog(){
-
-            AlertDialog alertDialog = new AlertDialog.Builder(mCtx).create();
-
-            // Set Custom Title
-            TextView title = new TextView(mCtx);
-            // Title Properties
-            title.setText("Custom Dialog Box");
-            title.setPadding(10, 10, 10, 10);   // Set Position
-            title.setGravity(Gravity.CENTER);
-            title.setTextColor(Color.BLACK);
-            title.setTextSize(20);
-            alertDialog.setCustomTitle(title);
-
-            // Set Message
-            TextView msg = new TextView(mCtx);
-            // Message Properties
-            msg.setText("I am a Custom Dialog Box. \n Please Customize me.");
-            msg.setGravity(Gravity.CENTER_HORIZONTAL);
-            msg.setTextColor(Color.BLACK);
-            alertDialog.setView(msg);
-
-            // Set Button
-            // you can more buttons
-            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL,"OK", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                    // Perform Action on Button
-                }
-            });
-
-            alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE,"CANCEL", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                    // Perform Action on Button
-                }
-            });
-
-            new Dialog(mCtx);
-            alertDialog.show();
-
-            // Set Properties for OK Button
-            final Button okBT = alertDialog.getButton(AlertDialog.BUTTON_NEUTRAL);
-            LinearLayout.LayoutParams neutralBtnLP = (LinearLayout.LayoutParams) okBT.getLayoutParams();
-            neutralBtnLP.gravity = Gravity.FILL_HORIZONTAL;
-            okBT.setPadding(50, 10, 10, 10);   // Set Position
-            okBT.setTextColor(Color.BLUE);
-            okBT.setLayoutParams(neutralBtnLP);
-
-            final Button cancelBT = alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE);
-            LinearLayout.LayoutParams negBtnLP = (LinearLayout.LayoutParams) okBT.getLayoutParams();
-            negBtnLP.gravity = Gravity.FILL_HORIZONTAL;
-            cancelBT.setTextColor(Color.RED);
-            cancelBT.setLayoutParams(negBtnLP);
-        }
-
-        @Override
+//        @Override
         public void onClick(View v) {
             Intent startNewActivity = new Intent(v.getContext(), MainActivity.class);
             v.getContext().startActivity(startNewActivity);

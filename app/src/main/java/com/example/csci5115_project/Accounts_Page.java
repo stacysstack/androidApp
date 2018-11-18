@@ -1,9 +1,13 @@
 package com.example.csci5115_project;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -29,6 +33,10 @@ import java.util.List;
 public class Accounts_Page extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    CreditCardAdapter adapter;
+    public AlertDialog alert;
+
+    public Context mCtx;
 
     //a list to store all the products
     List<CreditCard> cardList;
@@ -45,14 +53,11 @@ public class Accounts_Page extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
+
+        //getting the recyclerview from xml
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         //add new credit card button
         gotonewcc = (Button) findViewById(R.id.addnewcc);
@@ -76,10 +81,7 @@ public class Accounts_Page extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        //getting the recyclerview from xml
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
 
         //initializing the productlist
         cardList = new ArrayList<>();
@@ -87,7 +89,7 @@ public class Accounts_Page extends AppCompatActivity
 
         //adding some items to our list
         cardList.add(
-                new CreditCard(
+                new CreditCard(0,
                         "My American Express",
                         "John Doe",
                         "000000",
@@ -97,7 +99,7 @@ public class Accounts_Page extends AppCompatActivity
                         R.drawable.amex));
 
         cardList.add(
-                new CreditCard(
+                new CreditCard(1,
                         "REI Discover",
                         "John Doe",
                         "00000000",
@@ -107,7 +109,7 @@ public class Accounts_Page extends AppCompatActivity
                         R.drawable.discover));
 
         cardList.add(
-                new CreditCard(
+                new CreditCard(2,
                         "Bank Card",
                         "John Doe",
                         "0000000",
@@ -117,9 +119,45 @@ public class Accounts_Page extends AppCompatActivity
                         R.drawable.usbank));
 
         //creating recyclerview adapter
-        CreditCardAdapter adapter = new CreditCardAdapter(this, cardList);
+//        CreditCardAdapter adapter = new CreditCardAdapter(this, cardList);
+/// for popup
 
         //setting adapter to recyclerview
+//        recyclerView.setAdapter(adapter);
+
+        adapter = new CreditCardAdapter(this, cardList, new CustomItemClickListener() {
+
+            @Override
+            public void onItemClick(View v, int position) {
+                Integer postId = cardList.get(position).getCardId();
+                Log.d(postId.toString(), "changing cards");
+//                if (postId == 0){
+                    Intent intent = new Intent(Accounts_Page.this, activity_popupcard.class);
+                    intent.putExtra("EXTRA_SESSION_ID", position);
+                    startActivity(intent);
+//                } else if (postId == 1){
+//                    Intent intent1 = new Intent(Accounts_Page.this, activity_popupcard.class);
+//                    startActivity(intent1);
+//                } else if (postId == 2){
+//                    Intent intent2 = new Intent(Accounts_Page.this, activity_popupcard.class);
+//                    startActivity(intent2);
+//                }
+//            mCtx = this.getApplicationContext();
+//            LayoutInflater inflater = LayoutInflater.from(mCtx.this);
+//            View alertLayout = inflater.inflate(R.layout.popupwindow, null);
+//            AlertDialog alertDialog = new AlertDialog.Builder(mCtx).create();
+//            alertDialog.setView(alertLayout);
+//
+//            new Dialog(mCtx);
+//            alertDialog.show();
+            }
+
+        });
+
+        //end popup
+
+//
+//        //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
 
     }

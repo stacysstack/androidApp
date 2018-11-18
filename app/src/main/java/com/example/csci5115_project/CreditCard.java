@@ -1,6 +1,7 @@
 package com.example.csci5115_project;
 
 public class CreditCard {
+    private int cardId;
     private String title;
     private String owner;
     private String cardnumber;
@@ -10,7 +11,8 @@ public class CreditCard {
     private int image;
 
 
-    public CreditCard(String title, String owner, String cardnumber,int cvv, String expiration, int zip, int image){
+    public CreditCard(int cardId, String title, String owner, String cardnumber,int cvv, String expiration, int zip, int image){
+        this.cardId = cardId;
         this.title = title;
         this.owner = owner;
         this.cardnumber = cardnumber;
@@ -18,6 +20,8 @@ public class CreditCard {
         this.zip = zip;
         this.image = image;
     }
+
+    public int getCardId() { return cardId; }
 
     public String getTitle(){ return title; }
 
