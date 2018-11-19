@@ -20,6 +20,7 @@ public class activity_confirmorder extends AppCompatActivity {
 
         String popName=getIntent().getStringExtra("POP_NAME");
         String popRest= getIntent().getStringExtra("REST_NAME");
+        String popPrice= getIntent().getStringExtra("ORDER_PRICE");
 
 
         TextView orderName = (TextView) findViewById(R.id.order_name);
@@ -27,6 +28,9 @@ public class activity_confirmorder extends AppCompatActivity {
 
         TextView orderRest = (TextView) findViewById(R.id.order_restaurant);
         orderRest.setText(popRest);
+
+        TextView orderPrice = (TextView) findViewById(R.id.order_price);
+        orderPrice.setText(popPrice);
 
         //save button
         confirmorder = (Button) findViewById(R.id.confirmorder);

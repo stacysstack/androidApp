@@ -16,13 +16,13 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
         android:text="Cancel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toEndOf="@+id/confirmorder"
-        app:layout_constraintTop_toBottomOf="@+id/order_restaurant" />
+        app:layout_constraintTop_toBottomOf="@+id/order_price" />
 
     <Button
         android:id="@+id/confirmorder"
@@ -32,11 +32,11 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="28dp"
         android:layout_toStartOf="@+id/cancelorder"
         android:text="ORDER"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/order_restaurant" />
+        app:layout_constraintTop_toBottomOf="@+id/order_price" />
 
     <TextView
         android:id="@+id/order_name"
@@ -45,7 +45,7 @@
         android:layout_above="@+id/confirmorder"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,6 +62,18 @@
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/order_name" />
+
+    <TextView
+        android:id="@+id/order_price"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order_restaurant" />
 
     <TextView
         android:id="@+id/confirmthis"
@@ -82,11 +94,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:text="Order Name:"
         app:layout_constraintEnd_toStartOf="@+id/order_name"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/confirmthis" />
 
@@ -99,8 +111,21 @@
         android:layout_marginEnd="8dp"
         android:text="Restaurant:"
         app:layout_constraintEnd_toStartOf="@+id/order_restaurant"
-        app:layout_constraintHorizontal_bias="0.93"
+        app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/order_name" />
+
+    <TextView
+        android:id="@+id/order_rest2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="Price:"
+        app:layout_constraintEnd_toStartOf="@+id/order_restaurant"
+        app:layout_constraintHorizontal_bias="0.622"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order_restaurant" />
 
 </android.support.constraint.ConstraintLayout>
