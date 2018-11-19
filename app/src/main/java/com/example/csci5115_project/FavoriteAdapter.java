@@ -14,14 +14,19 @@ import java.util.List;
 public class FavoriteAdapter extends RecyclerView.Adapter<com.example.csci5115_project.FavoriteAdapter.FavoriteViewHolder> {
     // context to inflate the layout
     private Context mCtx;
+    CustomItemClickListener listener;
 
     // store all the favorites in a list
     private List<Favorite> favoriteList;
 
     // get  context and favorites list with constructor
-    public FavoriteAdapter(Context mCtx, List<Favorite> favoriteList) {
+    public FavoriteAdapter(Context mCtx, List<Favorite> favoriteList,
+                           CustomItemClickListener listener ) {
         this.mCtx = mCtx;
         this.favoriteList = favoriteList;
+        //for popup
+        this.listener = listener;
+        //end popup
     }
 
     @Override
@@ -29,13 +34,27 @@ public class FavoriteAdapter extends RecyclerView.Adapter<com.example.csci5115_p
        //inflating and returning our view holder
             LayoutInflater inflater = LayoutInflater.from(mCtx);
             View view = inflater.inflate(R.layout.content_main, null);
-            return new FavoriteViewHolder(view, mCtx);
+//            return new FavoriteViewHolder(view, mCtx);
+//        for popup
+            final FavoriteViewHolder mViewHolder = new FavoriteViewHolder(view, mCtx);
+
+            view.setOnClickListener(new View.OnClickListener(){
+                        @Override
+                        public void onClick(View v){
+                            listener.onItemClick(v, mViewHolder.getAdapterPosition());
+            }
+        });
+            return mViewHolder;
+//        end popup
         }
 
         @Override
         public void onBindViewHolder(FavoriteViewHolder holder, int position) {
             //getting the product of the specified position
             Favorite favorite = favoriteList.get(position);
+            //for popup
+            holder.textViewName.setText(favoriteList.get(position).getName());
+            //end popup
             //binding the data with the viewHolder views
             holder.textViewName.setText(favorite.getName());
             holder.textViewRestaurant.setText(favorite.getRestaurant());
@@ -50,7 +69,8 @@ public class FavoriteAdapter extends RecyclerView.Adapter<com.example.csci5115_p
         }
 
 
-        class FavoriteViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        class FavoriteViewHolder extends RecyclerView.ViewHolder {
+//                implements View.OnClickListener{
 
             TextView textViewName, textViewRestaurant;
             ImageView imageView;
@@ -61,13 +81,13 @@ public class FavoriteAdapter extends RecyclerView.Adapter<com.example.csci5115_p
                 super(itemView);
                 this.favorites = favorites;
                 this.ctx = ctx;
-                itemView.setOnClickListener(this);
+//                itemView.setOnClickListener(this);
                 textViewName = itemView.findViewById(R.id.textViewName);
                 textViewRestaurant = itemView.findViewById(R.id.textViewRestaurantName);
                 imageView = itemView.findViewById(R.id.imageViewFavorite);
             }
 
-            @Override
+//            @Override
             public void onClick(View v) {
 //            int position = getAdapterPosition();
 //            Product this_product = this.products.get(position);

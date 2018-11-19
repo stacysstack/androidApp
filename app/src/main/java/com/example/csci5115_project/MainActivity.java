@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity
     List<Favorite> favoriteList = new ArrayList<>();
     RecyclerView recyclerView;
     public static boolean new_flag = false;
-
+    FavoriteAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,8 +85,27 @@ public class MainActivity extends AppCompatActivity
                         "Pizza Co.",
                         R.drawable.pizza));
 
-        FavoriteAdapter adapter = new FavoriteAdapter(this, favoriteList);
+
+        adapter = new FavoriteAdapter(this,favoriteList,new CustomItemClickListener() {
+
+            @Override
+            public void onItemClick(View v, int position) {
+//                Log.d("create popup for item");
+                String orderName = favoriteList.get(position).getName();
+                String restName = favoriteList.get(position).getRestaurant();
+
+                Intent intent = new Intent (MainActivity.this, activity_confirmorder.class);
+                intent.putExtra("POP_NAME", orderName);
+                intent.putExtra("REST_NAME", restName);
+                startActivity(intent);
+            }
+        });
+
         recyclerView.setAdapter(adapter);
+
+
+//        FavoriteAdapter adapter = new FavoriteAdapter(this, favoriteList);
+//        recyclerView.setAdapter(adapter);
     }
     
 
@@ -98,7 +118,18 @@ public class MainActivity extends AppCompatActivity
                             "Bean Burrito",
                             "Twin Cities Taco",
                             R.drawable.taco));
-            FavoriteAdapter adapter = new FavoriteAdapter(this, favoriteList);
+            FavoriteAdapter adapter = new FavoriteAdapter(this, favoriteList, new CustomItemClickListener() {
+                @Override
+                public void onItemClick(View v, int position) {
+                    String orderName = favoriteList.get(position).getName();
+                    String restName = favoriteList.get(position).getRestaurant();
+
+                    Intent intent = new Intent (MainActivity.this, activity_confirmorder.class);
+                    intent.putExtra("POP_NAME", orderName);
+                    intent.putExtra("REST_NAME", restName);
+                    startActivity(intent);
+                }
+            });
             recyclerView.setAdapter(adapter);
             new_flag = false;
         }

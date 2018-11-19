@@ -34,7 +34,6 @@ public class Accounts_Page extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     CreditCardAdapter adapter;
-    public AlertDialog alert;
 
     public Context mCtx;
 
@@ -118,13 +117,6 @@ public class Accounts_Page extends AppCompatActivity
                         62345,
                         R.drawable.usbank));
 
-        //creating recyclerview adapter
-//        CreditCardAdapter adapter = new CreditCardAdapter(this, cardList);
-/// for popup
-
-        //setting adapter to recyclerview
-//        recyclerView.setAdapter(adapter);
-
         adapter = new CreditCardAdapter(this, cardList, new CustomItemClickListener() {
 
             @Override
@@ -144,21 +136,7 @@ public class Accounts_Page extends AppCompatActivity
                     intent.putExtra("POP_UP_CVV", popcvv);
                     intent.putExtra("POP_UP_EXP", popexp);
                     startActivity(intent);
-//                } else if (postId == 1){
-//                    Intent intent1 = new Intent(Accounts_Page.this, activity_popupcard.class);
-//                    startActivity(intent1);
-//                } else if (postId == 2){
-//                    Intent intent2 = new Intent(Accounts_Page.this, activity_popupcard.class);
-//                    startActivity(intent2);
-//                }
-//            mCtx = this.getApplicationContext();
-//            LayoutInflater inflater = LayoutInflater.from(mCtx.this);
-//            View alertLayout = inflater.inflate(R.layout.popupwindow, null);
-//            AlertDialog alertDialog = new AlertDialog.Builder(mCtx).create();
-//            alertDialog.setView(alertLayout);
-//
-//            new Dialog(mCtx);
-//            alertDialog.show();
+
             }
 
         });
