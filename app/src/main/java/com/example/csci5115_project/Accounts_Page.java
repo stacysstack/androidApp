@@ -131,10 +131,14 @@ public class Accounts_Page extends AppCompatActivity
             public void onItemClick(View v, int position) {
                 Integer postId = cardList.get(position).getCardId();
                 Log.d(postId.toString(), "changing cards");
-                String passed= "this is new";
+                String poptitle = cardList.get(position).getTitle();
+                String popnumber = cardList.get(position).getOwner();
+                String popowner = cardList.get(position).getCardnumber();
 //                if (postId == 0){
                     Intent intent = new Intent(Accounts_Page.this, activity_popupcard.class);
-                    intent.putExtra("EXTRA_SESSION_ID", passed);
+                    intent.putExtra("POP_UP_TITLE", poptitle);
+                    intent.putExtra("POP_UP_NUMBER", popnumber);
+                    intent.putExtra("POP_UP_OWNER", popowner);
                     startActivity(intent);
 //                } else if (postId == 1){
 //                    Intent intent1 = new Intent(Accounts_Page.this, activity_popupcard.class);

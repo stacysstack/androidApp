@@ -23,7 +23,9 @@ public class activity_popupcard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_popupcard);
-        String passed= getIntent().getStringExtra("EXTRA_SESSION_ID");
+        String poptitle= getIntent().getStringExtra("POP_UP_TITLE");
+        String popowner = getIntent().getStringExtra("POP_UP_OWNER");
+        String popnumber = getIntent().getStringExtra("POP_UP_NUMBER");
 
 
 //          code to record user typing
@@ -38,7 +40,13 @@ public class activity_popupcard extends AppCompatActivity {
 //        });
 //        editText = findViewById(R.id.edit_card_name);
         EditText nameedit = (EditText)findViewById(R.id.edit_card_name);
-        nameedit.setText(passed);
+        nameedit.setText(poptitle);
+
+        EditText ownerEdit = (EditText)findViewById(R.id.edit_card_owner);
+        ownerEdit.setText(popowner);
+
+        EditText numberEdit = (EditText)findViewById(R.id.edit_card_number);
+        numberEdit.setText(popnumber);
 
         //save button
         savecc = (Button) findViewById(R.id.savebutton);

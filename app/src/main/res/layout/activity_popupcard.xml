@@ -9,18 +9,53 @@
 
     <com.santalu.widget.MaskEditText
         android:id="@+id/edit_card_name"
-        android:layout_width="323dp"
+        android:layout_width="232dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="34dp"
+        android:layout_marginStart="18dp"
         android:layout_marginTop="124dp"
         android:layout_marginEnd="27dp"
         android:layout_marginRight="27dp"
+        android:layout_toEndOf="@+id/textView5"
         android:hint="Enter Payment Name"
         android:inputType="textImeMultiLine"
+        android:textSize="12sp"
+        app:met_mask="###################" />
+
+    <com.santalu.widget.MaskEditText
+        android:id="@+id/edit_card_owner"
+        android:layout_width="201dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_card_name"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_toEndOf="@+id/textView6"
+        android:hint="Enter Owner Name"
+        android:inputType="textImeMultiLine"
+        android:textSize="12sp"
+        app:met_mask="###################" />
+
+    <com.santalu.widget.MaskEditText
+        android:id="@+id/edit_card_number"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_card_owner"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        android:layout_toEndOf="@+id/textView7"
+        android:hint="Enter Card Number"
+        android:inputType="textImeMultiLine"
+        android:textSize="12sp"
         app:met_mask="###################" />
 
     <LinearLayout
@@ -62,5 +97,35 @@
         android:layout_marginEnd="21dp"
         android:layout_toStartOf="@+id/cancelbutton"
         android:text="Save" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="131dp"
+        android:text="Edit Card Name:" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="54dp"
+        android:text="Edit Card Owner:" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="38dp"
+        android:text="Edit Card Number:" />
 
 </RelativeLayout>
