@@ -23,8 +23,9 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    List<Favorite> favoriteList;
+    List<Favorite> favoriteList = new ArrayList<>();
     RecyclerView recyclerView;
+    public static boolean new_flag = false;
 
 
     @Override
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        favoriteList = new ArrayList<>();
+
 
         favoriteList.add(
                 new Favorite(
@@ -85,6 +86,23 @@ public class MainActivity extends AppCompatActivity
 
         FavoriteAdapter adapter = new FavoriteAdapter(this, favoriteList);
         recyclerView.setAdapter(adapter);
+    }
+    
+
+    @Override
+    public void onResume() {
+        if(new_flag) {
+            favoriteList.add(
+                    new Favorite(
+                            1,
+                            "Bean Burrito",
+                            "Twin Cities Taco",
+                            R.drawable.taco));
+            FavoriteAdapter adapter = new FavoriteAdapter(this, favoriteList);
+            recyclerView.setAdapter(adapter);
+            new_flag = false;
+        }
+        super.onResume();
     }
 
 

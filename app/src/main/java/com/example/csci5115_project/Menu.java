@@ -12,9 +12,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class Menu extends AppCompatActivity {
     private ShareActionProvider shareActionProvider;
+
+    Button addorder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,20 @@ public class Menu extends AppCompatActivity {
         //Attach the ViewPager to the TabLayout
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(pager);
+
+
+        addorder = (Button) findViewById(R.id.add_order_button);
+        addorder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.new_flag = true;
+                Intent intent = new Intent(Menu.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+//                Intent makecc = new Intent(getApplicationContext(), AddNewCreditCard.class);
+//                startActivity(makecc);
+            }
+        });
     }
 
     @Override
@@ -63,6 +81,11 @@ public class Menu extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+//    @Override
+//    public void onClick() {
+//
+//    }
 
     private class SectionsPagerAdapter extends FragmentPagerAdapter {
         public SectionsPagerAdapter(FragmentManager fm) {
