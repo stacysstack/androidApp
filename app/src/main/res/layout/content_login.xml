@@ -52,7 +52,7 @@
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/enterpassword" />
+            android:hint="@string/email" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -70,7 +70,7 @@
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/email" />
+            android:hint="@string/enterpassword" />
     </android.support.design.widget.TextInputLayout>
 
 </android.support.constraint.ConstraintLayout>
