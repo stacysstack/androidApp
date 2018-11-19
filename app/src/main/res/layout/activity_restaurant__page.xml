@@ -21,8 +21,8 @@
             android:clipChildren="true"
             android:clipToPadding="true"
             app:layout_constraintTop_toTopOf="parent">
-
         </android.support.v7.widget.RecyclerView>
+
     </android.support.constraint.ConstraintLayout>
 
     <include

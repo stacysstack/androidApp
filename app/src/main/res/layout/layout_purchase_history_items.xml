@@ -8,7 +8,6 @@
     android:padding="4dp"
     android:orientation="vertical">
 
-
     <TextView
         android:id="@+id/textViewDate"
         android:layout_width="fill_parent"
@@ -25,8 +24,6 @@
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
         android:text="Restaurant" />
-
-
 
     <LinearLayout
         android:id="@+id/phItemExpandedArea"

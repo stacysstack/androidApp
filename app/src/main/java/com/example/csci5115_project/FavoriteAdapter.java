@@ -39,7 +39,6 @@ public class FavoriteAdapter extends RecyclerView.Adapter<com.example.csci5115_p
             //binding the data with the viewHolder views
             holder.textViewName.setText(favorite.getName());
             holder.textViewRestaurant.setText(favorite.getRestaurant());
-
             holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(favorite.getImage()));
 
         }

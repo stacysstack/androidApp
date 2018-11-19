@@ -78,14 +78,14 @@ public class Restaurant_Page extends AppCompatActivity
                 new Product(
                         1,
                         "Taco Palace",
-                        "Tacos so good, you think you are in Mexico.",
+                        "Tacos so good, you'll think you are in Mexico.",
                         R.drawable.taco));
 
         productList.add(
                 new Product(
                         1,
                         "Big Burgerz",
-                        "Burgers you won't be able to handle",
+                        "Burgers you won't be able to handle.",
                         R.drawable.burger));
 
         //creating recyclerview adapter
