@@ -68,29 +68,29 @@ public class PurchaseHistoryPage extends AppCompatActivity
         phList.add(
                 new PurchaseHistoryItem(
                         1,
-                        "Pizza Co.",
+                        "************1234",
                         "11-01-2018",
+                        "1 Large Pepperoni with extra cheese",
                         "12.12",
-                        "1 Large Pizza",
-                        "************1234"));
+                        "Pizza Co."));
 
         phList.add(
                 new PurchaseHistoryItem(
-                        2,
-                        "Taco Palace",
-                        "11-02-2018",
-                        "8.01",
-                        "6 Tacos",
-                        "************9876"));
+                        1,
+                        "************1234",
+                        "11-01-2018",
+                        "1 Large Pepperoni with extra cheese",
+                        "12.12",
+                        "Pizza Co."));
 
         phList.add(
                 new PurchaseHistoryItem(
-                        3,
-                        "Big Burgerz",
-                        "11-04-2018",
-                        "100.11",
-                        "100 Burgerz",
-                        "************1467"));
+                        1,
+                        "************1234",
+                        "11-01-2018",
+                        "1 Large Pepperoni with extra cheese",
+                        "12.12",
+                        "Pizza Co."));
 
         //creating recyclerview adapter
         PurchaseHistoryAdapter adapter = new PurchaseHistoryAdapter(this, phList);

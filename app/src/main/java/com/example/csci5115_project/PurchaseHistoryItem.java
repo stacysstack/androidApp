@@ -2,36 +2,38 @@ package com.example.csci5115_project;
 
 public class PurchaseHistoryItem {
     private int id;
-    private String restaurantName;
-    private String date;
-    private String price;
-    private String order;
-    private String cc;
+    private String account, date, order, price, restaurantName, total;
 
-    public PurchaseHistoryItem(int id, String restaurantName, String date, String price, String order, String cc) {
+    public PurchaseHistoryItem(int id, String account, String date, String order, String price, String restaurantName) {
         this.id = id;
-        this.restaurantName = restaurantName;
+        this.account = "ac: " + account;
         this.date = date;
-        this.price = price;
         this.order = order;
-        this.cc = cc;
+        this.price = price;
+        this.restaurantName = restaurantName;
+        this.total = "total: " + price;
     }
 
     public int getId() {
         return id;
     }
 
-    public String getRestaurantName() {
-        return restaurantName;
-    }
+    public String getAccount() { return account; }
 
     public String getDate() {
         return date;
     }
 
+    public String getOrder() {
+        return order;
+    }
+
     public String getPrice() { return price; }
 
-    public String getOrder() { return order; }
+    public String getRestaurantName() {
+        return restaurantName;
+    }
 
-    public String getCC() { return cc; }
+    public String getTotal() { return total; }
+
 }

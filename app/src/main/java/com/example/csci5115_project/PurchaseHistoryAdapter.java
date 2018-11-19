@@ -2,11 +2,9 @@ package com.example.csci5115_project;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.transition.TransitionManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -55,14 +53,16 @@ public class PurchaseHistoryAdapter extends RecyclerView.Adapter<PurchaseHistory
         //getting the PurchaseHistoryItem of the specified position
         PurchaseHistoryItem phItem = phList.get(position);
 
-        //binding the data with the viewholder views
-        //System.out.println(phItem.getDate());
-        //System.out.println(phItem.getRestaurantName());
-        //System.out.println(phItem.getPrice());
 
-        holder.textViewDate.setText(phItem.getDate());
-        holder.textViewRestaurant.setText(phItem.getRestaurantName());
-        holder.textViewPrice.setText(phItem.getPrice());
+        holder.phAc.setText(phItem.getAccount());
+        holder.phDate1.setText(phItem.getDate());
+        holder.phDate2.setText(phItem.getDate());
+        holder.phOrder.setText(phItem.getOrder());
+        holder.phPrice.setText(phItem.getPrice());
+        holder.phRest1.setText(phItem.getRestaurantName());
+        holder.phRest2.setText(phItem.getRestaurantName());
+        holder.phTotal.setText(phItem.getTotal());
+
     }
 
 
@@ -75,19 +75,20 @@ public class PurchaseHistoryAdapter extends RecyclerView.Adapter<PurchaseHistory
     class PurchaseHistoryViewHolder extends RecyclerView.ViewHolder {
 
         View expandable;
-        TextView textViewDate, textViewRestaurant, textViewPrice;
+        TextView phAc, phDate1, phDate2, phOrder, phPrice, phRest1, phRest2, phTotal;
 
         public PurchaseHistoryViewHolder(View itemView) {
             super(itemView);
 
             this.expandable = itemView.findViewById(R.id.phItemExpandedArea);
-            this.textViewDate = itemView.findViewById(R.id.textViewDate);
-            this.textViewRestaurant = itemView.findViewById(R.id.textViewRestaurant);
-            this.textViewPrice = itemView.findViewById(R.id.textViewPrice);
-
-            //System.out.println(textViewDate);
-            //System.out.println(textViewRestaurant);
-            //System.out.println(textViewPrice);
+            this.phAc = itemView.findViewById(R.id.phAc);
+            this.phDate1 = itemView.findViewById(R.id.phDate1);
+            this.phDate2 = itemView.findViewById(R.id.phDate2);
+            this.phOrder = itemView.findViewById(R.id.phOrder);
+            this.phPrice = itemView.findViewById(R.id.phPrice);
+            this.phRest1 = itemView.findViewById(R.id.phRest1);
+            this.phRest2 = itemView.findViewById(R.id.phRest2);
+            this.phTotal = itemView.findViewById(R.id.phTotal);
 
         }
     }

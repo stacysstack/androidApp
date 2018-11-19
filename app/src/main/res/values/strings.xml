@@ -57,4 +57,10 @@
     <string name="order_name_hint">Please enter your name</string>
     <string name="order_details_hint">Please enter your order</string>
 
+    <string name="reorder">Reorder</string>
+    <string name="add_to_fav">Add to Fav.</string>
+
+
+
+
 </resources>
