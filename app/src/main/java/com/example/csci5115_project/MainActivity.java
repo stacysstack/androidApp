@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity
     List<Favorite> favoriteList = new ArrayList<>();
     RecyclerView recyclerView;
     public static boolean new_flag = false;
-
+    FavoriteAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,15 +35,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -64,27 +56,49 @@ public class MainActivity extends AppCompatActivity
                         1,
                         "Cheese Pizza",
                         "Pizza Co.",
-                        R.drawable.pizza));
+                        R.drawable.pizza,
+                        "$12.99"));
         favoriteList.add(
                 new Favorite(
                         1,
                         "Beef Taco",
                         "Twin Cities Taco",
-                        R.drawable.taco));
+                        R.drawable.taco,
+                        "$7.55"));
         favoriteList.add(
                 new Favorite(
                         1,
                         "Cheeseburger (No Mustard)",
                         "Dinkytown Burgerz",
-                        R.drawable.taco));
+                        R.drawable.burger,
+                        "$8.99"));
         favoriteList.add(
                 new Favorite(
                         1,
                         "Meatlovers' Pizza",
                         "Pizza Co.",
-                        R.drawable.pizza));
+                        R.drawable.pizza,
+                        "$15.12"));
 
-        FavoriteAdapter adapter = new FavoriteAdapter(this, favoriteList);
+
+        adapter = new FavoriteAdapter(this,favoriteList,new CustomItemClickListener() {
+
+            @Override
+            public void onItemClick(View v, int position) {
+//                Log.d("create popup for item");
+                String orderName = favoriteList.get(position).getName();
+                String restName = favoriteList.get(position).getRestaurant();
+                String orderPrice = favoriteList.get(position).getPrice();
+
+                Intent intent = new Intent (MainActivity.this, activity_confirmorder.class);
+                intent.putExtra("POP_NAME", orderName);
+                intent.putExtra("REST_NAME", restName);
+                intent.putExtra("ORDER_PRICE", orderPrice);
+
+                startActivity(intent);
+            }
+        });
+
         recyclerView.setAdapter(adapter);
     }
     
@@ -97,8 +111,22 @@ public class MainActivity extends AppCompatActivity
                             1,
                             "Bean Burrito",
                             "Twin Cities Taco",
-                            R.drawable.taco));
-            FavoriteAdapter adapter = new FavoriteAdapter(this, favoriteList);
+                            R.drawable.taco,
+                            "$6.98"));
+            FavoriteAdapter adapter = new FavoriteAdapter(this, favoriteList, new CustomItemClickListener() {
+                @Override
+                public void onItemClick(View v, int position) {
+                    String orderName = favoriteList.get(position).getName();
+                    String restName = favoriteList.get(position).getRestaurant();
+                    String orderPrice = favoriteList.get(position).getPrice();
+
+                    Intent intent = new Intent (MainActivity.this, activity_confirmorder.class);
+                    intent.putExtra("POP_NAME", orderName);
+                    intent.putExtra("REST_NAME", restName);
+                    intent.putExtra("ORDER_PRICE", orderPrice);
+                    startActivity(intent);
+                }
+            });
             recyclerView.setAdapter(adapter);
             new_flag = false;
         }
@@ -167,25 +195,5 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-    /* Doesn't work */
-//    public boolean onFavoriteSelected(CardView item) {
-//        int id = item.getId();
-    /* Navigation to incorrect location - for testing purposes */
-//        if (id == R.id.pizzaCardViewId) {
-//            Intent startNewActivity = new Intent(this, Restaurant_Page.class);
-//            startActivity(startNewActivity);
-//        } else if (id == R.id.burgersCardViewId) {
-//            Intent startNewActivity = new Intent(this, Restaurant_Page.class);
-//            startActivity(startNewActivity);
-//        } else if (id == R.id.tacoCardViewId) {
-//            Intent startNewActivity = new Intent(this, Restaurant_Page.class);
-//            startActivity(startNewActivity);
-//        } else if (id == R.id.meatPizzaCardViewId) {
-//            Intent startNewActivity = new Intent(this, Restaurant_Page.class);
-//            startActivity(startNewActivity);
-//       }
-//        return true;
-//    }
 
 }

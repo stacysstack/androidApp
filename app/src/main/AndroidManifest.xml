@@ -48,10 +48,15 @@
                 android:value=".Menu" />
         </activity>
         <activity android:name=".AddNewCreditCard" />
-        <activity android:name=".activity_popupcard"
-            android:theme="@style/Theme.AppCompat.Dialog.Alert"
+        <activity
+            android:name=".activity_popupcard"
+            android:noHistory="true"
             android:parentActivityName=".Accounts_Page"
-            android:noHistory="true"/>
+            android:theme="@style/Theme.AppCompat.Dialog.Alert" />
+        <activity android:name=".activity_confirmorder"
+            android:noHistory="true"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Dialog.Alert"/>
     </application>
 
 </manifest>

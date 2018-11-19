@@ -34,7 +34,6 @@ public class Accounts_Page extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     CreditCardAdapter adapter;
-    public AlertDialog alert;
 
     public Context mCtx;
 
@@ -90,10 +89,10 @@ public class Accounts_Page extends AppCompatActivity
         //adding some items to our list
         cardList.add(
                 new CreditCard(0,
-                        "My American Express",
-                        "John Doe",
-                        "000000",
-                        "333",
+                        "American Express",
+                        "Sean Montague",
+                        "356600202030505",
+                        "331",
                         "1/21",
                         52345,
                         R.drawable.amex));
@@ -101,29 +100,22 @@ public class Accounts_Page extends AppCompatActivity
         cardList.add(
                 new CreditCard(1,
                         "REI Discover",
-                        "John Doe",
-                        "00000000",
-                        "333",
+                        "Stacy Alme",
+                        "200360055360602",
+                        "529",
                         "5/19",
-                        52345,
+                        48642,
                         R.drawable.discover));
 
         cardList.add(
                 new CreditCard(2,
                         "Bank Card",
-                        "John Doe",
-                        "0000000",
+                        "Adam Petersen",
+                        "510334059522602",
                         "523",
                         "01/23",
                         62345,
                         R.drawable.usbank));
-
-        //creating recyclerview adapter
-//        CreditCardAdapter adapter = new CreditCardAdapter(this, cardList);
-/// for popup
-
-        //setting adapter to recyclerview
-//        recyclerView.setAdapter(adapter);
 
         adapter = new CreditCardAdapter(this, cardList, new CustomItemClickListener() {
 
@@ -144,21 +136,7 @@ public class Accounts_Page extends AppCompatActivity
                     intent.putExtra("POP_UP_CVV", popcvv);
                     intent.putExtra("POP_UP_EXP", popexp);
                     startActivity(intent);
-//                } else if (postId == 1){
-//                    Intent intent1 = new Intent(Accounts_Page.this, activity_popupcard.class);
-//                    startActivity(intent1);
-//                } else if (postId == 2){
-//                    Intent intent2 = new Intent(Accounts_Page.this, activity_popupcard.class);
-//                    startActivity(intent2);
-//                }
-//            mCtx = this.getApplicationContext();
-//            LayoutInflater inflater = LayoutInflater.from(mCtx.this);
-//            View alertLayout = inflater.inflate(R.layout.popupwindow, null);
-//            AlertDialog alertDialog = new AlertDialog.Builder(mCtx).create();
-//            alertDialog.setView(alertLayout);
-//
-//            new Dialog(mCtx);
-//            alertDialog.show();
+
             }
 
         });
