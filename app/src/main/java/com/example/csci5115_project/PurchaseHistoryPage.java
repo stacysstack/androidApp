@@ -141,13 +141,14 @@ public class PurchaseHistoryPage extends AppCompatActivity
             Intent startNewActivity = new Intent(this, MainActivity.class);
             startActivity(startNewActivity);
         } else if (id == R.id.nav_gallery) {
+            Intent startNewActivity = new Intent(this, Restaurant_Page.class);
+            startActivity(startNewActivity);
+
+        } else if (id == R.id.nav_slideshow) {
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             if (drawer.isDrawerOpen(GravityCompat.START)) {
                 drawer.closeDrawer(GravityCompat.START);
             }
-        } else if (id == R.id.nav_slideshow) {
-            Intent startNewActivity = new Intent(this, PurchaseHistoryPage.class);
-            startActivity(startNewActivity);
 
         } else if (id == R.id.nav_share) {
             Intent startNewActivity = new Intent(this, Accounts_Page.class);
