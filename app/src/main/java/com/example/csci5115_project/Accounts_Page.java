@@ -93,7 +93,7 @@ public class Accounts_Page extends AppCompatActivity
                         "My American Express",
                         "John Doe",
                         "000000",
-                        333,
+                        "333",
                         "1/21",
                         52345,
                         R.drawable.amex));
@@ -103,7 +103,7 @@ public class Accounts_Page extends AppCompatActivity
                         "REI Discover",
                         "John Doe",
                         "00000000",
-                        333,
+                        "333",
                         "5/19",
                         52345,
                         R.drawable.discover));
@@ -113,7 +113,7 @@ public class Accounts_Page extends AppCompatActivity
                         "Bank Card",
                         "John Doe",
                         "0000000",
-                        523,
+                        "523",
                         "01/23",
                         62345,
                         R.drawable.usbank));
@@ -134,11 +134,15 @@ public class Accounts_Page extends AppCompatActivity
                 String poptitle = cardList.get(position).getTitle();
                 String popnumber = cardList.get(position).getOwner();
                 String popowner = cardList.get(position).getCardnumber();
+                String popcvv = cardList.get(position).getCvv();
+                String popexp = cardList.get(position).getExpiration();
 //                if (postId == 0){
                     Intent intent = new Intent(Accounts_Page.this, activity_popupcard.class);
                     intent.putExtra("POP_UP_TITLE", poptitle);
                     intent.putExtra("POP_UP_NUMBER", popnumber);
                     intent.putExtra("POP_UP_OWNER", popowner);
+                    intent.putExtra("POP_UP_CVV", popcvv);
+                    intent.putExtra("POP_UP_EXP", popexp);
                     startActivity(intent);
 //                } else if (postId == 1){
 //                    Intent intent1 = new Intent(Accounts_Page.this, activity_popupcard.class);

@@ -26,6 +26,9 @@ public class activity_popupcard extends AppCompatActivity {
         String poptitle= getIntent().getStringExtra("POP_UP_TITLE");
         String popowner = getIntent().getStringExtra("POP_UP_OWNER");
         String popnumber = getIntent().getStringExtra("POP_UP_NUMBER");
+        String popcvv = getIntent().getStringExtra("POP_UP_CVV");
+        String popexp = getIntent().getStringExtra("POP_UP_EXP");
+
 
 
 //          code to record user typing
@@ -47,6 +50,13 @@ public class activity_popupcard extends AppCompatActivity {
 
         EditText numberEdit = (EditText)findViewById(R.id.edit_card_number);
         numberEdit.setText(popnumber);
+
+        EditText cvvEdit = (EditText)findViewById(R.id.edit_card_cvv);
+        cvvEdit.setText(popcvv);
+
+
+        EditText expEdit = (EditText)findViewById(R.id.edit_card_exp);
+        expEdit.setText(popexp);
 
         //save button
         savecc = (Button) findViewById(R.id.savebutton);

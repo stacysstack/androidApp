@@ -15,7 +15,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginStart="18dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="27dp"
         android:layout_marginRight="27dp"
         android:layout_toEndOf="@+id/textView5"
@@ -58,6 +58,40 @@
         android:textSize="12sp"
         app:met_mask="###################" />
 
+    <com.santalu.widget.MaskEditText
+        android:id="@+id/edit_card_cvv"
+        android:layout_width="111dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_card_number"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="178dp"
+        android:layout_marginRight="178dp"
+        android:layout_toEndOf="@+id/textView7"
+        android:hint="CVV"
+        android:inputType="textImeMultiLine"
+        android:textSize="12sp"
+        app:met_mask="###################" />
+
+    <com.santalu.widget.MaskEditText
+        android:id="@+id/edit_card_exp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_card_number"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="79dp"
+        android:layout_marginEnd="126dp"
+        android:layout_marginRight="126dp"
+        android:layout_toEndOf="@+id/textView9"
+        android:hint="Enter Card Expiration"
+        android:inputType="textImeMultiLine"
+        android:textSize="12sp"
+        app:met_mask="###################" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -80,20 +114,20 @@
         android:id="@+id/cancelbutton"
         android:layout_width="134dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_card_name"
+        android:layout_below="@+id/textView9"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="250dp"
-        android:layout_marginEnd="35dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="36dp"
         android:text="Cancel" />
 
     <Button
         android:id="@+id/savebutton"
         android:layout_width="158dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_card_name"
+        android:layout_below="@+id/textView9"
         android:layout_alignParentStart="true"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="252dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="21dp"
         android:layout_toStartOf="@+id/cancelbutton"
         android:text="Save" />
@@ -105,8 +139,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="19dp"
-        android:layout_marginTop="131dp"
-        android:text="Edit Card Name:" />
+        android:layout_marginTop="88dp"
+        android:text="Title:" />
 
     <TextView
         android:id="@+id/textView6"
@@ -116,7 +150,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="21dp"
         android:layout_marginTop="54dp"
-        android:text="Edit Card Owner:" />
+        android:text="Name:" />
 
     <TextView
         android:id="@+id/textView7"
@@ -126,6 +160,26 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="21dp"
         android:layout_marginTop="38dp"
-        android:text="Edit Card Number:" />
+        android:text="Number:" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="102dp"
+        android:text="CVV:" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="79dp"
+        android:layout_height="22dp"
+        android:layout_below="@+id/edit_card_cvv"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="16dp"
+        android:text="Expiration:" />
 
 </RelativeLayout>
