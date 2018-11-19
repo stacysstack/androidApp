@@ -88,10 +88,13 @@ public class MainActivity extends AppCompatActivity
 //                Log.d("create popup for item");
                 String orderName = favoriteList.get(position).getName();
                 String restName = favoriteList.get(position).getRestaurant();
+                String orderPrice = favoriteList.get(position).getPrice();
 
                 Intent intent = new Intent (MainActivity.this, activity_confirmorder.class);
                 intent.putExtra("POP_NAME", orderName);
                 intent.putExtra("REST_NAME", restName);
+                intent.putExtra("ORDER_PRICE", orderPrice);
+
                 startActivity(intent);
             }
         });
@@ -115,10 +118,12 @@ public class MainActivity extends AppCompatActivity
                 public void onItemClick(View v, int position) {
                     String orderName = favoriteList.get(position).getName();
                     String restName = favoriteList.get(position).getRestaurant();
+                    String orderPrice = favoriteList.get(position).getPrice();
 
                     Intent intent = new Intent (MainActivity.this, activity_confirmorder.class);
                     intent.putExtra("POP_NAME", orderName);
                     intent.putExtra("REST_NAME", restName);
+                    intent.putExtra("ORDER_PRICE", orderPrice);
                     startActivity(intent);
                 }
             });
