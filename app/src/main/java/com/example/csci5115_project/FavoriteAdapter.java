@@ -58,6 +58,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<com.example.csci5115_p
             //binding the data with the viewHolder views
             holder.textViewName.setText(favorite.getName());
             holder.textViewRestaurant.setText(favorite.getRestaurant());
+            holder.textViewPrice.setText(favorite.getPrice());
             holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(favorite.getImage()));
 
         }
@@ -72,7 +73,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<com.example.csci5115_p
         class FavoriteViewHolder extends RecyclerView.ViewHolder {
 //                implements View.OnClickListener{
 
-            TextView textViewName, textViewRestaurant;
+            TextView textViewName, textViewRestaurant, textViewPrice;
             ImageView imageView;
             Context ctx;
             ArrayList<Favorite> favorites = new ArrayList<Favorite>();
@@ -84,6 +85,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<com.example.csci5115_p
 //                itemView.setOnClickListener(this);
                 textViewName = itemView.findViewById(R.id.textViewName);
                 textViewRestaurant = itemView.findViewById(R.id.textViewRestaurantName);
+                textViewPrice = itemView.findViewById(R.id.textViewPrice);
                 imageView = itemView.findViewById(R.id.imageViewFavorite);
             }
 

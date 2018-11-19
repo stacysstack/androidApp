@@ -56,25 +56,29 @@ public class MainActivity extends AppCompatActivity
                         1,
                         "Cheese Pizza",
                         "Pizza Co.",
-                        R.drawable.pizza));
+                        R.drawable.pizza,
+                        "$12.99"));
         favoriteList.add(
                 new Favorite(
                         1,
                         "Beef Taco",
                         "Twin Cities Taco",
-                        R.drawable.taco));
+                        R.drawable.taco,
+                        "$7.55"));
         favoriteList.add(
                 new Favorite(
                         1,
                         "Cheeseburger (No Mustard)",
                         "Dinkytown Burgerz",
-                        R.drawable.taco));
+                        R.drawable.burger,
+                        "$8.99"));
         favoriteList.add(
                 new Favorite(
                         1,
                         "Meatlovers' Pizza",
                         "Pizza Co.",
-                        R.drawable.pizza));
+                        R.drawable.pizza,
+                        "$15.12"));
 
 
         adapter = new FavoriteAdapter(this,favoriteList,new CustomItemClickListener() {
@@ -104,7 +108,8 @@ public class MainActivity extends AppCompatActivity
                             1,
                             "Bean Burrito",
                             "Twin Cities Taco",
-                            R.drawable.taco));
+                            R.drawable.taco,
+                            "$6.98"));
             FavoriteAdapter adapter = new FavoriteAdapter(this, favoriteList, new CustomItemClickListener() {
                 @Override
                 public void onItemClick(View v, int position) {
