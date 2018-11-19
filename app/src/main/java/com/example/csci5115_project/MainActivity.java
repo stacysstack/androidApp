@@ -36,15 +36,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -102,10 +93,6 @@ public class MainActivity extends AppCompatActivity
         });
 
         recyclerView.setAdapter(adapter);
-
-
-//        FavoriteAdapter adapter = new FavoriteAdapter(this, favoriteList);
-//        recyclerView.setAdapter(adapter);
     }
     
 
@@ -198,25 +185,5 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-    /* Doesn't work */
-//    public boolean onFavoriteSelected(CardView item) {
-//        int id = item.getId();
-    /* Navigation to incorrect location - for testing purposes */
-//        if (id == R.id.pizzaCardViewId) {
-//            Intent startNewActivity = new Intent(this, Restaurant_Page.class);
-//            startActivity(startNewActivity);
-//        } else if (id == R.id.burgersCardViewId) {
-//            Intent startNewActivity = new Intent(this, Restaurant_Page.class);
-//            startActivity(startNewActivity);
-//        } else if (id == R.id.tacoCardViewId) {
-//            Intent startNewActivity = new Intent(this, Restaurant_Page.class);
-//            startActivity(startNewActivity);
-//        } else if (id == R.id.meatPizzaCardViewId) {
-//            Intent startNewActivity = new Intent(this, Restaurant_Page.class);
-//            startActivity(startNewActivity);
-//       }
-//        return true;
-//    }
 
 }
