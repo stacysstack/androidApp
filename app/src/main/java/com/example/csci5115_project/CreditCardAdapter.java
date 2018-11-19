@@ -41,6 +41,8 @@ public class CreditCardAdapter extends RecyclerView.Adapter<CreditCardAdapter.Cr
     //for popup button
 //    Context mContext;
     CustomItemClickListener listener;
+//    Button savecc;
+//    Button cancelcc;
     //end popup
 
     private MaskEditText editText;
@@ -53,11 +55,6 @@ public class CreditCardAdapter extends RecyclerView.Adapter<CreditCardAdapter.Cr
 
 //    private AlertDialog.Builder alert = new AlertDialog.Builder(mCtx);
     private AlertDialog alert;
-
-//    Button cancelbutton;
-//    Button sendbutton;
-//    Dialog popup;
-
 
 
     @Override

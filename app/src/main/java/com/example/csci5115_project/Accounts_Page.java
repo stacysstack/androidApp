@@ -39,7 +39,7 @@ public class Accounts_Page extends AppCompatActivity
     public Context mCtx;
 
     //a list to store all the products
-    List<CreditCard> cardList;
+    public List<CreditCard> cardList;
 
     //the recyclerview
     RecyclerView recyclerView;
@@ -131,9 +131,10 @@ public class Accounts_Page extends AppCompatActivity
             public void onItemClick(View v, int position) {
                 Integer postId = cardList.get(position).getCardId();
                 Log.d(postId.toString(), "changing cards");
+                String passed= "this is new";
 //                if (postId == 0){
                     Intent intent = new Intent(Accounts_Page.this, activity_popupcard.class);
-                    intent.putExtra("EXTRA_SESSION_ID", position);
+                    intent.putExtra("EXTRA_SESSION_ID", passed);
                     startActivity(intent);
 //                } else if (postId == 1){
 //                    Intent intent1 = new Intent(Accounts_Page.this, activity_popupcard.class);

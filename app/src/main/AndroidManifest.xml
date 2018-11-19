@@ -50,7 +50,8 @@
         <activity android:name=".AddNewCreditCard" />
         <activity android:name=".activity_popupcard"
             android:theme="@style/Theme.AppCompat.Dialog.Alert"
-            android:parentActivityName=".Accounts_Page"/>
+            android:parentActivityName=".Accounts_Page"
+            android:noHistory="true"/>
     </application>
 
 </manifest>
