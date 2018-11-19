@@ -124,8 +124,8 @@ public class Accounts_Page extends AppCompatActivity
                 Integer postId = cardList.get(position).getCardId();
                 Log.d(postId.toString(), "changing cards");
                 String poptitle = cardList.get(position).getTitle();
-                String popnumber = cardList.get(position).getOwner();
-                String popowner = cardList.get(position).getCardnumber();
+                String popowner = cardList.get(position).getOwner();
+                String popnumber = cardList.get(position).getCardnumber();
                 String popcvv = cardList.get(position).getCvv();
                 String popexp = cardList.get(position).getExpiration();
 //                if (postId == 0){

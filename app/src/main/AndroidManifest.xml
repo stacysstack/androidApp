@@ -31,7 +31,6 @@
             android:name=".Restaurant_Page"
             android:label="Restaurants"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AddNewCreditCard" />
         <activity android:name=".Menu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,13 +46,20 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Menu" />
         </activity>
-        <activity android:name=".AddNewCreditCard" />
+        <activity
+            android:name=".AddNewCreditCard"
+            android:theme="@style/Theme.AppCompat.Dialog.Alert"
+            android:label="Add New Payment Method"
+            android:parentActivityName=".Accounts_Page"
+            android:noHistory="true"/>
         <activity
             android:name=".activity_popupcard"
+            android:label="Edit Payment Method"
             android:noHistory="true"
             android:parentActivityName=".Accounts_Page"
             android:theme="@style/Theme.AppCompat.Dialog.Alert" />
         <activity android:name=".activity_confirmorder"
+            android:label="Please confirm your order:"
             android:noHistory="true"
             android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.AppCompat.Dialog.Alert"/>
