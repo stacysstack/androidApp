@@ -80,6 +80,15 @@ public class MainActivity extends AppCompatActivity
                         R.drawable.pizza,
                         "$15.12"));
 
+        if(new_flag) {
+            favoriteList.add(
+                    new Favorite(
+                            1,
+                            "Bean Burrito",
+                            "Twin Cities Taco",
+                            R.drawable.taco,
+                            "$6.98"));
+        }
 
         adapter = new FavoriteAdapter(this,favoriteList,new CustomItemClickListener() {
 
@@ -102,37 +111,7 @@ public class MainActivity extends AppCompatActivity
         recyclerView.setAdapter(adapter);
     }
     
-
-    @Override
-    public void onResume() {
-        if(new_flag) {
-            favoriteList.add(
-                    new Favorite(
-                            1,
-                            "Bean Burrito",
-                            "Twin Cities Taco",
-                            R.drawable.taco,
-                            "$6.98"));
-            FavoriteAdapter adapter = new FavoriteAdapter(this, favoriteList, new CustomItemClickListener() {
-                @Override
-                public void onItemClick(View v, int position) {
-                    String orderName = favoriteList.get(position).getName();
-                    String restName = favoriteList.get(position).getRestaurant();
-                    String orderPrice = favoriteList.get(position).getPrice();
-
-                    Intent intent = new Intent (MainActivity.this, activity_confirmorder.class);
-                    intent.putExtra("POP_NAME", orderName);
-                    intent.putExtra("REST_NAME", restName);
-                    intent.putExtra("ORDER_PRICE", orderPrice);
-                    startActivity(intent);
-                }
-            });
-            recyclerView.setAdapter(adapter);
-            new_flag = false;
-        }
-        super.onResume();
-    }
-
+    
 
     @Override
     public void onBackPressed() {
