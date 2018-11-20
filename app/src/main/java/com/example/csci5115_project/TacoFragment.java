@@ -18,7 +18,7 @@ public class TacoFragment extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                inflater.getContext(), android.R.layout.simple_list_item_1,
+                inflater.getContext(), android.R.layout.simple_list_item_multiple_choice,
                 getResources().getStringArray(R.array.tacos));
         setListAdapter(adapter);
         return super.onCreateView(inflater, container, savedInstanceState);
