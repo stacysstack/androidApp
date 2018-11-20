@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,12 +30,15 @@ public class PurchaseHistoryPage extends AppCompatActivity
     //the recyclerview
     RecyclerView recyclerView;
 
+    Button reorder;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchase_history);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 //
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +74,7 @@ public class PurchaseHistoryPage extends AppCompatActivity
                         1,
                         "************1234",
                         "11-01-2018",
-                        "1 Large Pepperoni with extra cheese",
+                        "5 Cheese Pizzas",
                         "12.12",
                         "Pizza Co."));
 
@@ -88,7 +92,7 @@ public class PurchaseHistoryPage extends AppCompatActivity
                         1,
                         "************1234",
                         "11-01-2018",
-                        "1 Large Pepperoni with extra cheese",
+                        "Cowboy pizza",
                         "12.12",
                         "Pizza Co."));
 

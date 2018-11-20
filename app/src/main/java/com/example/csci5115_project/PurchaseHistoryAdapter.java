@@ -1,10 +1,12 @@
 package com.example.csci5115_project;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -15,7 +17,9 @@ public class PurchaseHistoryAdapter extends RecyclerView.Adapter<PurchaseHistory
 
     static int mExpandedPosition = -1;
 
+    public View popview;
 
+    Button reorderButton;
     //this context we will use to inflate the layout
     private Context mCtx;
 
@@ -37,22 +41,28 @@ public class PurchaseHistoryAdapter extends RecyclerView.Adapter<PurchaseHistory
     }
 
     @Override
-    public void onBindViewHolder(PurchaseHistoryViewHolder holder, final int position) {
+    public void onBindViewHolder(final PurchaseHistoryViewHolder holder, final int position) {
         System.out.println(position);
+        PurchaseHistoryItem phItem = phList.get(position);
         final boolean isExpanded = position==mExpandedPosition;
         holder.expandable.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
         holder.expandable.setActivated(isExpanded);
+        System.out.println("setting expanded");
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("setting expanded");
                 mExpandedPosition = isExpanded ? -1:position;
                 notifyItemChanged(position);
+                reorderButton = (Button) v.findViewById(R.id.phReorder);
+                reorderButton.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v){
+                        Intent orderPopup = new Intent(mCtx,activity_confirmorder.class);
+                        mCtx.startActivity(orderPopup);
+                    }
+                });
             }
         });
-        //getting the PurchaseHistoryItem of the specified position
-        PurchaseHistoryItem phItem = phList.get(position);
-
 
         holder.phAc.setText(phItem.getAccount());
         holder.phDate1.setText(phItem.getDate());
