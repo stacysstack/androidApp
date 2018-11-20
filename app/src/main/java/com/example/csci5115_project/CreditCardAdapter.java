@@ -86,6 +86,7 @@ public class CreditCardAdapter extends RecyclerView.Adapter<CreditCardAdapter.Cr
         ///end popup
         //binding the data with the viewholder views
         holder.textViewCardTitle.setText(creditcard.getTitle());
+        holder.textViewCardHolder.setText(creditcard.getOwner());
         holder.textViewCardNumber.setText(creditcard.getCardnumber());
         holder.textViewExpiration.setText(creditcard.getExpiration());
         holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(creditcard.getImage()));
@@ -119,6 +120,7 @@ public class CreditCardAdapter extends RecyclerView.Adapter<CreditCardAdapter.Cr
         //end popup
 //        public TextView itemTitle;
         TextView textViewCardTitle;
+        TextView textViewCardHolder;
         TextView textViewCardNumber;
         TextView textViewExpiration;
 //        EditText editCardTitle;
@@ -132,6 +134,7 @@ public class CreditCardAdapter extends RecyclerView.Adapter<CreditCardAdapter.Cr
 //            this.creditcard = creditcard;
             this.ctx = ctx;
 //            itemView.setOnClickListener(itemView);
+            textViewCardHolder = itemView.findViewById(R.id.cardholder);
             textViewCardTitle = itemView.findViewById(R.id.textViewCardTitle);
             textViewCardNumber = itemView.findViewById(R.id.textViewCC);
             textViewExpiration = itemView.findViewById(R.id.textViewExp);
