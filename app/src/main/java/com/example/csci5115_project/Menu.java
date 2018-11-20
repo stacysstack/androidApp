@@ -19,6 +19,7 @@ public class Menu extends AppCompatActivity {
     private ShareActionProvider shareActionProvider;
 
     Button addorder;
+    Button addtofavorites;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +47,17 @@ public class Menu extends AppCompatActivity {
                 Intent intent = new Intent(Menu.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
-//                Intent makecc = new Intent(getApplicationContext(), AddNewCreditCard.class);
-//                startActivity(makecc);
+            }
+        });
+
+        addtofavorites = (Button) findViewById(R.id.button_2);
+        addtofavorites.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PurchaseHistoryPage.flag_new_purchase = true;
+                Intent intent = new Intent(Menu.this, PurchaseHistoryPage.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
         });
     }

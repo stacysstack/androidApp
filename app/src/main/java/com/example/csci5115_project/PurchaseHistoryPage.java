@@ -23,6 +23,7 @@ import java.util.List;
 public class PurchaseHistoryPage extends AppCompatActivity
             implements NavigationView.OnNavigationItemSelectedListener {
 
+    public static boolean flag_new_purchase = false;
 
         //a list to store all the products
     List<PurchaseHistoryItem> phList;
@@ -95,6 +96,17 @@ public class PurchaseHistoryPage extends AppCompatActivity
                         "Cowboy pizza",
                         "12.12",
                         "Pizza Co."));
+
+        if(flag_new_purchase) {
+            phList.add(
+                    new PurchaseHistoryItem(
+                            1,
+                            "************1234",
+                            "11-01-2018",
+                            "Bean Burrito",
+                            "6.98",
+                            "Twin Cities Taco"));
+        }
 
         //creating recyclerview adapter
         PurchaseHistoryAdapter adapter = new PurchaseHistoryAdapter(this, phList);
