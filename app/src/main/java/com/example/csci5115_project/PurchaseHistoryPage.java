@@ -78,7 +78,7 @@ public class PurchaseHistoryPage extends AppCompatActivity
                         "10-31-2018",
                         "5 Cheese Pizzas",
                         "$60.62",
-                        "Pizza Co."));
+                        "Northeast Pizza Co."));
 
         phList.add(
                 new PurchaseHistoryItem(
@@ -87,7 +87,7 @@ public class PurchaseHistoryPage extends AppCompatActivity
                         "11-01-2018",
                         "1 Large Pepperoni with extra cheese",
                         "S12.02",
-                        "Pizza Co."));
+                        "Northeast Pizza Co."));
 
         phList.add(
                 new PurchaseHistoryItem(
@@ -96,7 +96,7 @@ public class PurchaseHistoryPage extends AppCompatActivity
                         "11-11-2018",
                         "Cowboy pizza",
                         "$12.12",
-                        "Pizza Co."));
+                        "Northeast Pizza Co."));
 
         if(flag_new_purchase) {
             phList.add(

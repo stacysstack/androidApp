@@ -63,22 +63,22 @@ public class Restaurant_Page extends AppCompatActivity
         productList.add(
                 new Product(
                         1,
-                        "Pizza Co.",
-                        "We make great pizzas!",
+                        "Northeast Pizza Co.",
+                        "Pizza, Italian",
                         R.drawable.pizza));
 
         productList.add(
                 new Product(
                         1,
-                        "Taco Palace",
-                        "Tacos so good, you'll think you are in Mexico.",
+                        "Twin City Tacos",
+                        "Specialty Tacos",
                         R.drawable.taco));
 
         productList.add(
                 new Product(
                         1,
-                        "Big Burgerz",
-                        "Burgers you won't be able to handle.",
+                        "Dinkytown Burgerz",
+                        "American, Burgers",
                         R.drawable.burger));
 
         //creating recyclerview adapter

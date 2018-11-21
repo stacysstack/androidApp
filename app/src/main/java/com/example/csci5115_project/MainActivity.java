@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity
                 new Favorite(
                         1,
                         "Cheese Pizza",
-                        "Pizza Co.",
+                        "Northeast Pizza Co.",
                         R.drawable.pizza,
                         "$12.99"));
         favoriteList.add(
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity
                 new Favorite(
                         1,
                         "Meatlovers' Pizza",
-                        "Pizza Co.",
+                        "Northeast Pizza Co.",
                         R.drawable.pizza,
                         "$15.12"));
 
