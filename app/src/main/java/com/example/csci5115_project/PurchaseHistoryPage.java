@@ -24,6 +24,7 @@ public class PurchaseHistoryPage extends AppCompatActivity
             implements NavigationView.OnNavigationItemSelectedListener {
 
     public static boolean flag_new_purchase = false;
+    public static boolean flag_favorite_burger_purchase = false;
 
         //a list to store all the products
     List<PurchaseHistoryItem> phList;
@@ -106,6 +107,17 @@ public class PurchaseHistoryPage extends AppCompatActivity
                             "Steak Taco with chips)",
                             "$6.98",
                             "Twin Cities Taco"));
+        }
+
+        if(flag_favorite_burger_purchase) {
+            phList.add(
+                    new PurchaseHistoryItem(
+                            1,
+                            "************3478",
+                            "11-21-2018",
+                            "Cheeseburger (no mustard)",
+                            "$8.90",
+                            "Dinkytown Burgerz"));
         }
 
         //creating recyclerview adapter

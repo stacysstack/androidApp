@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity
         favoriteList.add(
                 new Favorite(
                         1,
-                        "Cheeseburger (No Mustard)",
+                        "Cheeseburger (no mustard)",
                         "Dinkytown Burgerz",
                         R.drawable.burger,
                         "$8.99"));
