@@ -6,12 +6,12 @@ public class PurchaseHistoryItem {
 
     public PurchaseHistoryItem(int id, String account, String date, String order, String price, String restaurantName) {
         this.id = id;
-        this.account = "ac: " + account;
+        this.account = "Account number: " + account;
         this.date = date;
         this.order = order;
         this.price = price;
         this.restaurantName = restaurantName;
-        this.total = "total: " + price;
+        this.total = "Total: " + price;
     }
 
     public int getId() {
