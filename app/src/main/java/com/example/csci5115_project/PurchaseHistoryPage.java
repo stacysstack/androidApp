@@ -104,7 +104,7 @@ public class PurchaseHistoryPage extends AppCompatActivity
                             1,
                             "************3478",
                             "11-21-2018",
-                            "Steak Taco with chips)",
+                            "Steak Taco (with chips)",
                             "$6.98",
                             "Twin Cities Taco"));
         }
