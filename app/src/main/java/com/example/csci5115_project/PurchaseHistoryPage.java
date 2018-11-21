@@ -73,16 +73,16 @@ public class PurchaseHistoryPage extends AppCompatActivity
         phList.add(
                 new PurchaseHistoryItem(
                         1,
-                        "************1234",
+                        "************5224",
                         "11-01-2018",
-                        "5 Cheese Pizzas",
-                        "12.12",
-                        "Pizza Co."));
+                        "2 Large Burritos with guac",
+                        "18.57",
+                        "Taco Palace."));
 
         phList.add(
                 new PurchaseHistoryItem(
                         1,
-                        "************1234",
+                        "************7453",
                         "11-01-2018",
                         "1 Large Pepperoni with extra cheese",
                         "12.12",
@@ -91,10 +91,10 @@ public class PurchaseHistoryPage extends AppCompatActivity
         phList.add(
                 new PurchaseHistoryItem(
                         1,
-                        "************1234",
+                        "************8545",
                         "11-01-2018",
                         "Cowboy pizza",
-                        "12.12",
+                        "9.86",
                         "Pizza Co."));
 
         if(flag_new_purchase) {

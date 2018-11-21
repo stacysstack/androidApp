@@ -51,8 +51,6 @@ public class MainActivity extends AppCompatActivity
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-
-
         favoriteList.add(
                 new Favorite(
                         1,
