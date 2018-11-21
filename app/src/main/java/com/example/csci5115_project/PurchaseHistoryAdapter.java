@@ -53,14 +53,14 @@ public class PurchaseHistoryAdapter extends RecyclerView.Adapter<PurchaseHistory
             public void onClick(View v) {
                 mExpandedPosition = isExpanded ? -1:position;
                 notifyItemChanged(position);
-                reorderButton = (Button) v.findViewById(R.id.phReorder);
-                reorderButton.setOnClickListener(new View.OnClickListener(){
-                    @Override
-                    public void onClick(View v){
-                        Intent orderPopup = new Intent(mCtx,activity_confirmorder.class);
-                        mCtx.startActivity(orderPopup);
-                    }
-                });
+//                reorderButton = (Button) v.findViewById(R.id.phReorder);
+//                reorderButton.setOnClickListener(new View.OnClickListener(){
+//                    @Override
+//                    public void onClick(View v){
+//                        Intent orderPopup = new Intent(mCtx,activity_confirmorder.class);
+//                        mCtx.startActivity(orderPopup);
+//                    }
+//                });
             }
         });
 
@@ -99,6 +99,22 @@ public class PurchaseHistoryAdapter extends RecyclerView.Adapter<PurchaseHistory
             this.phRest1 = itemView.findViewById(R.id.phRest1);
             this.phRest2 = itemView.findViewById(R.id.phRest2);
             this.phTotal = itemView.findViewById(R.id.phTotal);
+
+            reorderButton = (Button) itemView.findViewById(R.id.phReorder);
+            reorderButton.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    String poptitle = phOrder.getText().toString();
+                    String poprest = phRest1.getText().toString();
+                    String poptotal = phPrice.getText().toString();
+                    System.out.println(poptitle);
+                    Intent orderPopup = new Intent(mCtx,activity_confirmorder.class);
+                    orderPopup.putExtra("POP_NAME", poptitle);
+                    orderPopup.putExtra("REST_NAME",poprest);
+                    orderPopup.putExtra("ORDER_PRICE",poptotal);
+                    mCtx.startActivity(orderPopup);
+                    }
+                });
 
         }
     }
