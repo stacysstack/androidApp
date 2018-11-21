@@ -15,7 +15,7 @@
     <string name="savecc">Save</string>
     <string name="email">email</string>
     <string name="enterpassword">password</string>
-
+    <string name="order_sent">Your order has been sent</string>
 
     <string name="create_order">Create Order</string>
     <string name="create_order_title">Create Order</string>

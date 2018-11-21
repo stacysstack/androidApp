@@ -41,8 +41,6 @@ public class CreditCardAdapter extends RecyclerView.Adapter<CreditCardAdapter.Cr
     //for popup button
 //    Context mContext;
     CustomItemClickListener listener;
-//    Button savecc;
-//    Button cancelcc;
     //end popup
 
     private MaskEditText editText;
@@ -140,26 +138,8 @@ public class CreditCardAdapter extends RecyclerView.Adapter<CreditCardAdapter.Cr
             textViewExpiration = itemView.findViewById(R.id.textViewExp);
             imageView = itemView.findViewById(R.id.imageView);
 
-            // create a popup window with credit card edits
-//            itemView.setOnClickListener(new View.OnClickListener()  {
-//                @Override
-//                public void onClick(View v) {
-//                    openDialog();
-//                }
-//            });
-
         }
 
-
-//        public void openDialog(){
-//            LayoutInflater inflater = LayoutInflater.from(mCtx);
-//            View alertLayout = inflater.inflate(R.layout.popupwindow, null);
-//            AlertDialog alertDialog = new AlertDialog.Builder(mCtx).create();
-//            alertDialog.setView(alertLayout);
-//
-//            new Dialog(mCtx);
-//            alertDialog.show();
-//        }
 
 //        @Override
         public void onClick(View v) {
