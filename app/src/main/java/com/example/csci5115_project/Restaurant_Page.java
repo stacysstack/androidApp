@@ -2,6 +2,7 @@ package com.example.csci5115_project;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -16,6 +17,8 @@ import android.view.MenuItem;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Button;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,22 +63,22 @@ public class Restaurant_Page extends AppCompatActivity
         productList.add(
                 new Product(
                         1,
-                        "Pizza Co.",
-                        "We make great pizzas!",
+                        "Northeast Pizza Co.",
+                        "Pizza, Italian",
                         R.drawable.pizza));
 
         productList.add(
                 new Product(
                         1,
-                        "Taco Palace",
-                        "Tacos so good, you'll think you are in Mexico.",
+                        "Twin City Tacos",
+                        "Specialty Tacos",
                         R.drawable.taco));
 
         productList.add(
                 new Product(
                         1,
-                        "Big Burgerz",
-                        "Burgers you won't be able to handle.",
+                        "Dinkytown Burgerz",
+                        "American, Burgers",
                         R.drawable.burger));
 
         //creating recyclerview adapter
@@ -84,6 +87,33 @@ public class Restaurant_Page extends AppCompatActivity
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
 
+        /*Button addFavorite = (Button) findViewById(R.id.add_order_button);
+        addFavorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                View view = getWindow().getDecorView().getRootView();
+                final Intent next = new Intent(Restaurant_Page.this, MainActivity.class);
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(next);
+                        finish();
+                    }
+                }, 1000);
+                //MainActivity.new_flag = true;
+            }
+        });*/
+        /*Button orderNow = (Button) findViewById(R.id.button_2);
+        orderNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                View view = getWindow().getDecorView().getRootView();
+                PurchaseHistoryPage.flag_new_purchase = true;
+                Intent next = new Intent(Restaurant_Page.this, PurchaseHistoryPage.class);
+                startActivity(next);
+            }
+        });*/
     }
 
 

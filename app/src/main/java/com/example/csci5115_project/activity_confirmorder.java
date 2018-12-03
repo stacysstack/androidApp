@@ -62,6 +62,7 @@ public class activity_confirmorder extends AppCompatActivity {
                         finish();
                     }
                 }, 1000);
+                PurchaseHistoryPage.flag_favorite_burger_purchase = true;
             }
 
             public void showSnackbar(View view, String message, int duration) {

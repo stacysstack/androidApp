@@ -7,6 +7,7 @@ import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -31,4 +32,15 @@ public class SideFragment extends ListFragment {
         l.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         l.setSelection(position);
     }
+
+//    @Override
+//    public void onResume(){
+//        ListView lv = getListView();
+//        ArrayAdapter<String> adapter = lv.getAdapter();
+//        lv.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+//
+//        for()
+//
+//        super.onResume();
+//    }
 }

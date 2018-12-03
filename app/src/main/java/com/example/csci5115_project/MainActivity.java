@@ -55,20 +55,20 @@ public class MainActivity extends AppCompatActivity
                 new Favorite(
                         1,
                         "Cheese Pizza",
-                        "Pizza Co.",
+                        "Northeast Pizza Co.",
                         R.drawable.pizza,
                         "$12.99"));
         favoriteList.add(
                 new Favorite(
                         1,
-                        "Beef Taco",
+                        "Pork Taco",
                         "Twin Cities Taco",
                         R.drawable.taco,
                         "$7.55"));
         favoriteList.add(
                 new Favorite(
                         1,
-                        "Cheeseburger (No Mustard)",
+                        "Cheeseburger (no mustard)",
                         "Dinkytown Burgerz",
                         R.drawable.burger,
                         "$8.99"));
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity
                 new Favorite(
                         1,
                         "Meatlovers' Pizza",
-                        "Pizza Co.",
+                        "Northeast Pizza Co.",
                         R.drawable.pizza,
                         "$15.12"));
 
@@ -84,10 +84,10 @@ public class MainActivity extends AppCompatActivity
             favoriteList.add(
                     new Favorite(
                             1,
-                            "Bean Burrito",
+                            "Steak Taco (with chips)",
                             "Twin Cities Taco",
                             R.drawable.taco,
-                            "$6.98"));
+                            "$14.98"));
         }
 
         adapter = new FavoriteAdapter(this,favoriteList,new CustomItemClickListener() {
